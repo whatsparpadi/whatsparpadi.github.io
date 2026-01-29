@@ -157,6 +157,19 @@ body {
     object-fit: cover;
 }
 
+/* Dynamic Card Heights */
+.card-image.small {
+    height: 250px;
+}
+
+.card-image.medium {
+    height: 350px;
+}
+
+.card-image.large {
+    height: 500px;
+}
+
 /* Overlay Text */
 .card-overlay {
     position: absolute;
@@ -319,30 +332,62 @@ body.dark-mode .filter-btn.active {
 
 
 /* Markdown Styles */
-.markdown-content h1,
-.markdown-content h2,
+/* Markdown Styles */
+.markdown-content h1 {
+    font-size: 2rem;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+.markdown-content h2 {
+    font-size: 1.6rem;
+    margin-top: 2em;
+    margin-bottom: 0.8em;
+    line-height: 1.3;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3em;
+}
+
 .markdown-content h3 {
+    font-size: 1.3rem;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-    line-height: 1.3;
+    font-weight: 600;
+}
+
+.markdown-content a {
+    color: var(--heading-color);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+}
+
+.markdown-content a:hover {
+    color: var(--accent-color);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .markdown-content ul,
 .markdown-content ol {
     margin-bottom: 1.5em;
-    padding-left: 20px;
+    padding-left: 25px;
 }
 
 .markdown-content li {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
+    padding-left: 5px;
 }
 
 .markdown-content blockquote {
-    border-left: 4px solid var(--border-color);
-    padding-left: 15px;
+    border-left: 4px solid var(--heading-color);
+    padding-left: 20px;
     color: var(--blockquote-color);
     font-style: italic;
-    margin-bottom: 1.5em;
+    margin-bottom: 2em;
+    background: rgba(0, 0, 0, 0.02);
+    padding: 15px 20px;
+    border-radius: 0 8px 8px 0;
 }
 
 .markdown-content code {
@@ -553,6 +598,14 @@ body.dark-mode .submit-btn {
     color: var(--text-color);
 }
 
+/* Post Date */
+.post-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
 .popup-close-btn {
     background: transparent;
     border: 2px solid var(--border-color);
@@ -596,4 +649,41 @@ body.dark-mode .popup-close-btn:hover {
         transform: scale(1);
         opacity: 1;
     }
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--heading-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .scroll-top-btn {
+    background-color: #fff;
+    color: #000;
 }

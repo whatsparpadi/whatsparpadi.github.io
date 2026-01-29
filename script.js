@@ -2,60 +2,110 @@
 const BLOG_POSTS = [
     {
         id: 1,
-        title: "The Art of Minimalist Living",
-        category: "People",
-        shortDesc: "Discover how decluttering your space can lead to a clearer mind and a more focused life.",
-        image: "https://picsum.photos/id/1015/600/800", // Nature/Water
-        content: `
-            <p>Minimalism isn't just about throwing away your stuff. It's about making room for what truly matters. In a world that constantly screams for our attention, finding silence is a radical act.</p>
-            <p><strong>Why start now?</strong> Because we are drowning in choices. The average person makes thousands of decisions a day. By reducing the number of physical objects in your environment, you reduce the cognitive load required to manage them.</p>
-            <p>Start small. Clear one drawer. Remove one app from your phone. Notice the lightness that follows. This isn't about deprivation; it's about curation. You are the curator of your own life, and it's time to stop hoarding minutes and start spending them on experiences that bring you joy.</p>
-            <p>The journey to minimalism is personal. For some, it's a backpack of belongings; for others, it's a clean desk. Find your balance and let the unnecessary fade away.</p>
-        `
-    },
-    {
-        id: 2,
-        title: "Modern Web Development 2024",
+        title: "How to Build Your Own Business Website Without Hiring a Developer",
         category: "Tech",
-        shortDesc: "A deep dive into static sites, performance optimization, and why simple is often better.",
-        image: "https://picsum.photos/id/1035/600/900", // Tech/Abstract vibe
+        shortDesc: "A step-by-step guide for business owners to create their own static website using AI tools like Antigravity, GitHub, and Google Forms — without coding knowledge or hiring freelancers.",
+        image: "assets/tech_website_building.png",
         content: `
-# Static vs Dynamic
-The debate between static and dynamic sites is older than the modern web itself. However, with tools like **Hugo**, **Jekyll**, and simple HTML/CSS generators, static sites are making a huge comeback.
+## How to Build Your Own Business Website Without Hiring a Developer
 
-## Why Go Static?
-1. **Speed**: No database queries means instant load times.
-2. **Security**: No server-side logic to hack.
-3. **Hosting**: Free hosting on GitHub Pages, Netlify, or Vercel.
+In this guide, I'm going to show you how to build a professional website for your business completely from scratch. You don't need to know how to code, you don't need to hire a freelancer, and you don't need to pay for expensive monthly website builders.
 
-## Code Example
-Here is a simple Javascript function to toggle a class:
+We will use AI tools to do the heavy lifting for us.
 
-\`\`\`javascript
-function toggleTheme() {
-    document.body.classList.toggle('dark-mode');
-    console.log('Theme toggled!');
-}
-\`\`\`
+### 1. Plan Your Website
 
-> "Simplicity is the ultimate sophistication." - Leonardo da Vinci
+Before we touch any tools, let's decide what we are building. For this guide, we will build a site for a fictional business:
 
-### Conclusion
-If you don't need user accounts or real-time data, **Go Static**. It saves money, time, and headaches.
-        `
-    },
-    {
-        id: 3,
-        title: "Culinary Adventures: Sourdough",
-        category: "Food",
-        shortDesc: "Why everyone is obsessed with wild yeast and how you can start your own starter today.",
-        image: "https://picsum.photos/id/1060/600/700", // Barista/Coffee/Food vibe
-        content: `
-            <p>Flour, water, and time. That's all it takes to create life. Well, at least a microbial culture that will make the best bread you've ever tasted. Sourdough baking is equal parts science and art.</p>
-            <p>The process demands patience. You can't rush fermentation. You have to watch the dough, feel its tension, and understand its rhythm. It's a slow, tactile experience in an increasingly digital world.</p>
-            <p><strong>The perfect loaf</strong> has a dark, caramelized crust and an open, airy crumb. It sings when you take it out of the oven—a crackling sound that every baker knows and loves. But the real reward is sharing it. Breaking bread with friends and family is a tradition as old as civilization itself.</p>
-            <p>So grab a jar, mix some flour and water, and wait. You're not just making bread; you're cultivating a relationship with the microscopic world. And trust me, it's delicious.</p>
-        `
+*   **Business Name:** Twinkles
+*   **Location:** Kochi (near Pachalam)
+*   **What they sell:** Products sold in kilos and packets
+*   **Goal:** To get shop enquiries and bulk order enquiries
+
+### 2. Structure Your Website
+
+A good business website should be simple. We need three main sections:
+
+1.  **Products Section:** To show what we sell and the prices.
+2.  **Location Section:** So people can find the shop.
+3.  **Contact Form:** So customers can message us for bulk orders.
+
+### 3. Install and Sign Up to Antigravity
+
+Antigravity is the AI tool that will write the code for us.
+
+1.  Download Antigravity for your computer (Windows, Mac, or Linux).
+2.  Sign in using your **Google Account**.
+3.  **Pro Tip (2026):** If you are in India, use Jio 5G for the best connection speed when downloading the models properly.
+
+### 4. Get the Prompt from ChatGPT
+
+You might not know exactly what to tell the AI. That's okay! We can use ChatGPT to write the instructions for us.
+
+Open ChatGPT and type this:
+
+> "I have a business called Twinkles in Kochi selling products in kilos. I want a static website with a product list, a Google Map location, and a contact form. Please write a detailed prompt that I can give to an AI coding assistant to build this website."
+
+Copy the output ChatGPT gives you.
+
+### 5. Generate the Website with Antigravity
+
+Open Antigravity and paste the prompt you got from ChatGPT. Ask it to generate:
+
+*   \`index.html\` (The structure)
+*   \`style.css\` (The design)
+*   \`script.js\` (The logic)
+
+**Important:** Tell Antigravity to use **only HTML, CSS, and JS**.
+
+### 6. Host it for Free on GitHub
+
+Now we need to put your website on the internet.
+
+1.  Create a free account on **GitHub.com**.
+2.  Create a **New Repository** and name it something like \`twinkles-website\`.
+3.  Upload your \`index.html\`, \`style.css\`, and \`script.js\` files.
+4.  Go to **Settings > Pages**.
+5.  Select the \`main\` branch and click **Save**.
+
+Your website is now live!
+
+### 7. Buy a Domain (The Component That Costs Money)
+
+GitHub gives you a long address (like \`yourname.github.io\`). You probably want \`twinkles.com\`.
+
+1.  Go to a site like **GoDaddy** or **Namecheap** and buy your domain.
+2.  In the domain settings, look for **DNS Management**.
+3.  Add a **CNAME Record** that points to your GitHub address.
+
+### 8. Add Your Location
+
+To add the map:
+
+1.  Go to **Google Maps** and find your shop in Pachalam.
+2.  Click **Share > Embed a Map**.
+3.  Copy the HTML code (it starts with \`<iframe\`).
+4.  Paste this code into your \`index.html\` where you want the map to appear.
+
+### 9. Add a Contact Form (The Smart Way)
+
+Backend code is hard. Let's cheat using Google Forms.
+
+1.  Create a **Google Form** with questions like Name, Phone, and Order Details.
+2.  Click **Send > Link**.
+3.  You can simply link to this form, or use a little JavaScript to send data to it directly (DOM manipulation).
+4.  This way, all enquiries come straight to your Google Sheets!
+
+### 10. Conclusion
+
+Congratulations! You now have a static website for Twinkles.
+
+**Why is this better?**
+*   **It's Fast:** Static sites load instantly.
+*   **It's Secure:** There's no database to hack.
+*   **It's Cheap:** You only pay for the domain name.
+        `,
+        date: "2026-01-29"
     }
 ];
 
@@ -95,6 +145,10 @@ themeToggle.addEventListener('click', () => {
 // Initialize
 function init() {
     initTheme();
+
+    // Sort logs by date (newest first)
+    BLOG_POSTS.sort((a, b) => new Date(b.date) - new Date(a.date));
+
     renderGrid('All');
 }
 
@@ -108,16 +162,36 @@ function renderGrid(filterCategory) {
         : BLOG_POSTS.filter(post => post.category === filterCategory);
 
     filteredPosts.forEach(post => {
+        // Calculate Reading Time & Content Length
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = post.content;
+        const textContent = tempDiv.textContent || tempDiv.innerText || "";
+        const wordCount = textContent.trim().split(/\s+/).length;
+        const readingTime = Math.ceil(wordCount / 200);
+
+        // Determine Card Size based on Word Count
+        let sizeClass = 'medium'; // Default
+        if (wordCount < 200) {
+            sizeClass = 'small';
+        } else if (wordCount > 500) {
+            sizeClass = 'large';
+        }
+
         const card = document.createElement('div');
-        card.className = 'blog-card';
+        card.className = `blog-card`;
         card.onclick = () => showPost(post.id);
 
         card.innerHTML = `
             <div class="card-image-wrapper">
-                <img src="${post.image}" alt="${post.title}" class="card-image">
+                <img src="${post.image}" alt="${post.title}" class="card-image ${sizeClass}">
                 <div class="card-overlay">
                     <h2 class="card-title">${post.title}</h2>
-                    <p class="card-desc">${post.category} • ${post.shortDesc}</p>
+                    <p class="card-desc">
+                        ${post.category} • ${readingTime} min read
+                    </p>
+                    <p class="card-desc" style="margin-top: 4px; font-size: 0.85rem; opacity: 0.8;">
+                       ${post.shortDesc}
+                    </p>
                 </div>
             </div>
         `;
@@ -146,6 +220,27 @@ function showPost(id) {
 
     // Populate Post View
     postTitle.textContent = post.title;
+
+    // Add or update date display
+    let dateEl = document.getElementById('post-date');
+    if (!dateEl) {
+        dateEl = document.createElement('p');
+        dateEl.id = 'post-date';
+        dateEl.className = 'post-date';
+        postTitle.parentNode.insertBefore(dateEl, postTitle.nextSibling);
+    }
+
+    const dateObj = new Date(post.date);
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+
+    // content word count for reading time
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = post.content;
+    const textContent = tempDiv.textContent || tempDiv.innerText || "";
+    const readingTime = Math.ceil(textContent.trim().split(/\s+/).length / 200);
+
+    dateEl.textContent = `Published on: ${dateObj.toLocaleDateString('en-GB', options)} • ${readingTime} min read`;
+
     postImage.src = post.image;
 
     // Render logic based on category
@@ -344,6 +439,31 @@ function closePopup() {
 
 // Make globally available for onclick="closePopup()"
 window.closePopup = closePopup;
+
+// Scroll to Top Logic
+const scrollTopBtn = document.getElementById('scroll-top-btn');
+
+window.addEventListener('scroll', () => {
+    // Show only if in post view (not hidden) AND scrolled > 200px
+    if (!postView.classList.contains('hidden') && window.scrollY > 200) {
+        scrollTopBtn.classList.remove('hidden');
+        scrollTopBtn.classList.add('visible');
+    } else {
+        scrollTopBtn.classList.remove('visible');
+        setTimeout(() => {
+            if (!scrollTopBtn.classList.contains('visible')) {
+                scrollTopBtn.classList.add('hidden');
+            }
+        }, 300); // Wait for transition
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
 
 // Run
 init();
