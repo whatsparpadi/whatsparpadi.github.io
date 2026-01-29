@@ -7,13 +7,13 @@ const BLOG_POSTS = [
         shortDesc: "A step-by-step guide for business owners to create their own static website using AI tools like Antigravity, GitHub, and Google Forms — without coding knowledge or hiring freelancers.",
         image: "assets/tech_website_building.png",
         content: `
-## How to Build Your Own Business Website Without Hiring a Developer
+## How to Create a Business Website Yourself (No Freelancers Needed)
 
 In this guide, I'm going to show you how to build a professional website for your business completely from scratch. You don't need to know how to code, you don't need to hire a freelancer, and you don't need to pay for expensive monthly website builders.
 
 We will use AI tools to do the heavy lifting for us.
 
-### 1. Plan Your Website
+### 1. The Plan: Example "Twinkles"
 
 Before we touch any tools, let's decide what we are building. For this guide, we will build a site for a fictional business:
 
@@ -22,88 +22,87 @@ Before we touch any tools, let's decide what we are building. For this guide, we
 *   **What they sell:** Products sold in kilos and packets
 *   **Goal:** To get shop enquiries and bulk order enquiries
 
-### 2. Structure Your Website
+The purpose of the website is for:
+*   Other businesses who needs to enquire
+*   Selling our products at their stores
+*   Customers who are enquiring about buying kilos of our products for an event
 
-A good business website should be simple. We need three main sections:
+So the website needs:
+1.  **Products Section**: Listed with MRP for quantity.
+2.  **Location Section**: Showing where our store is located.
+3.  **Contact Form**: For enquiries.
 
-1.  **Products Section:** To show what we sell and the prices.
-2.  **Location Section:** So people can find the shop.
-3.  **Contact Form:** So customers can message us for bulk orders.
+This is the planning of website, that is, structure or whatever it is called.
 
-### 3. Install and Sign Up to Antigravity
+### 2. Getting Started with Tools
 
-Antigravity is the AI tool that will write the code for us.
+Next step is to install **Antigravity** on Windows/Mac/Linux whichever you are using. Signup using Google.
 
-1.  Download Antigravity for your computer (Windows, Mac, or Linux).
-2.  Sign in using your **Google Account**.
-3.  **Pro Tip (2026):** If you are in India, use Jio 5G for the best connection speed when downloading the models properly.
+> **Pro Tip:** If you have a Jio 5G connection as of 2026, you will get **Google Pro**, so it will be useful while using Antigravity which again is a product of Google.
 
-### 4. Get the Prompt from ChatGPT
+### 3. The Prompting Strategy (Using ChatGPT)
 
-You might not know exactly what to tell the AI. That's okay! We can use ChatGPT to write the instructions for us.
+Assuming you're a business man or a business owner with no prior experience in coding, or don't even know full form of HTML, so you would probably have no idea what to prompt to Antigravity.
 
-Open ChatGPT and type this:
+So, I suggest using **ChatGPT** to create the prompt for Antigravity to make the website for you. Sounds intimidating but its pretty easy:
 
-> "I have a business called Twinkles in Kochi selling products in kilos. I want a static website with a product list, a Google Map location, and a contact form. Please write a detailed prompt that I can give to an AI coding assistant to build this website."
+1.  Go to ChatGPT.
+2.  Prompt it to make a website with contents you want on it. For me, use the "Twinkles" data above.
+3.  Ask ChatGPT: *"With this data, make a prompt so I can ask Antigravity to create the site."*
 
-Copy the output ChatGPT gives you.
+### 4. Vibecoding with Antigravity
 
-### 5. Generate the Website with Antigravity
+1.  Copy paste the prompt from ChatGPT to **Antigravity**.
+2.  Accept all pop ups.
+3.  You will have a plan. Just type \`continue\` or \`go ahead\` or \`plan approved\` to give a green light.
+4.  Antigravity will make all the files for you.
+5.  Make sure your code is built on **simple HTML/CSS/JS** for starters.
+6.  You can open the \`index.html\` file or double click it to see the code that Antigravity has written for you.
 
-Open Antigravity and paste the prompt you got from ChatGPT. Ask it to generate:
+### 5. Hosting on GitHub
 
-*   \`index.html\` (The structure)
-*   \`style.css\` (The design)
-*   \`script.js\` (The logic)
+Now the next step is to find a place on a server for this code to live. We will use **GitHub** for this.
 
-**Important:** Tell Antigravity to use **only HTML, CSS, and JS**.
+1.  Signup for GitHub.
+2.  Create a **new repo**.
+3.  Install **Git Bash**.
+4.  Do the steps to push your code to the repo.
 
-### 6. Host it for Free on GitHub
+### 6. Going Live with a Domain
 
-Now we need to put your website on the internet.
+Next step is to buy a domain.
 
-1.  Create a free account on **GitHub.com**.
-2.  Create a **New Repository** and name it something like \`twinkles-website\`.
-3.  Upload your \`index.html\`, \`style.css\`, and \`script.js\` files.
-4.  Go to **Settings > Pages**.
-5.  Select the \`main\` branch and click **Save**.
+1.  Just go to **GoDaddy**, search for your company name and buy it (cheapest would be somewhere around 90 rs).
+2.  Once you buy it, go to "My Products" -> "Domain Section".
+3.  Come back to your GitHub tab, and go to **Settings > Pages** and make it go live.
+4.  Once that is done, we need to link it with the GoDaddy site.
+5.  **In GitHub:** In the root of your repo, create a \`CNAME\` file.
+6.  **In GoDaddy:**
+    *   Go to DNS records inside domain settings.
+    *   Add a CNAME with your \`username.github.io\`.
+    *   (If you need an IP, copy it from GitHub Pages settings and add it to DNS records).
 
-Your website is now live!
+*Note: If you're using Vercel the steps will differ, but somewhat similar.*
 
-### 7. Buy a Domain (The Component That Costs Money)
+### 7. Finishing Touches: Location & Contact Form
 
-GitHub gives you a long address (like \`yourname.github.io\`). You probably want \`twinkles.com\`.
+Now your website will be live!
 
-1.  Go to a site like **GoDaddy** or **Namecheap** and buy your domain.
-2.  In the domain settings, look for **DNS Management**.
-3.  Add a **CNAME Record** that points to your GitHub address.
+**For Location:**
+1.  Go to Google Maps and find your address.
+2.  Ask Antigravity to "update the location as [your address]".
 
-### 8. Add Your Location
+**For Contact Form:**
+1.  Sign up on **Google Forms** and create a new form.
+2.  Add input fields: Name, Email, and Message (use Short Answer and Paragraph inputs).
+3.  Publish the form.
+4.  Get the link and open it in a new tab.
+5.  **The Hacker Part:** Go to **Inspect Mode** (Right Click -> Inspect).
+6.  Try to find the form element from the DOM using \`Ctrl+F\`.
+7.  Copy the element details.
+8.  Ask Antigravity to "connect the contact form to Google Form with the DOM I have copied".
 
-To add the map:
-
-1.  Go to **Google Maps** and find your shop in Pachalam.
-2.  Click **Share > Embed a Map**.
-3.  Copy the HTML code.
-4.  Paste this code into your \`index.html\` where you want the map to appear.
-
-### 9. Add a Contact Form (The Smart Way)
-
-Backend code is hard. Let's cheat using Google Forms.
-
-1.  Create a **Google Form** with questions like Name, Phone, and Order Details.
-2.  Click **Send > Link**.
-3.  You can simply link to this form, or use a little JavaScript to send data to it directly (DOM manipulation).
-4.  This way, all enquiries come straight to your Google Sheets!
-
-### 10. Conclusion
-
-Congratulations! You now have a static website for Twinkles.
-
-**Why is this better?**
-*   **It's Fast:** Static sites load instantly.
-*   **It's Secure:** There's no database to hack.
-*   **It's Cheap:** You only pay for the domain name.
+And that's it! You have a business website running.
         `,
         date: "2026-01-29"
     }
