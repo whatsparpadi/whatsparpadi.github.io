@@ -1,6 +1,79 @@
 // Data - 3 Example Blog Posts
 const BLOG_POSTS = [
     {
+        id: 4,
+        title: "How to Speed Up Your Old PC or Laptop (Windows 11 & Bloatware Guide)",
+        category: "Tech",
+        shortDesc: "Is your old PC slowing down? Learn 5 effective ways to speed it up, from debloating Windows 11 with Chris Titus Tech's tool to upgrading hardware.",
+        image: "assets/pc_speedup.png",
+        content: `
+## 5 Ways to Speed Up Your Slow Laptop or PC
+
+Is your old laptop or PC feeling sluggish? Windows 11 bloatware and background processes can severely impact performance. Here are 5 proven ways to make your computer fast again.
+
+### 1. The Ultimate Clean: Chris Titus Tech's Windows Utility
+
+The most effective way to debloat Windows is using the **Chris Titus Tech Windows Utility**. It's a powerful tool that removes pre-installed junk, disables telemetry, and optimizes your system.
+
+**How to use it:**
+1.  Right-click on the **Start Menu** and select **Terminal (Admin)** or **PowerShell (Admin)**.
+2.  Paste the following command and hit Enter:
+    \`iwr -useb https://christitus.com/win | iex\`
+3.  Once the tool opens:
+    *   Go to the **Tweaks** tab.
+    *   Select **Desktop** or **Laptop** (depending on your device).
+    *   Click **Run Tweaks**.
+    *   **Remove Bloatware:** remove all useless programs running in the background.
+    *   **Clear UI Elements:** Simplify the interface for speed.
+    *   **Remove Indexing & Search:** Windows Search is resource-heavy. Disable it and use **PowerToys Run** or **Everything** app for instant file searches.
+    *   **Uninstall Junk:** Remove **OneDrive** and **Microsoft Edge** if you don't use them.
+
+### 2. Bulk Crap Uninstaller (BCUninstaller)
+
+Some programs leave behind files and registry keys even after uninstalling. **Bulk Crap Uninstaller** is an open-source tool that removes these leftovers.
+
+*   Download and run **BCUninstaller**.
+*   It detects all installed apps, including hidden ones.
+*   Select the apps you want to remove and let it clean up all the residuals.
+
+### 3. Mem Reduct (RAM Cleaner)
+
+**Mem Reduct** is a lightweight tool to monitor and clean your system memory.
+
+<iframe width="560" height="315" style="max-width: 100%; border-radius: 8px;" src="https://www.youtube.com/embed/ADY5L33CR5g?si=5Cu2czgXpjW0xLK8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+**Setup Guide:**
+1.  Install Mem Reduct.
+2.  Run it as **Administrator**.
+3.  Go to **File > Settings > Memory Cleaning**.
+4.  Enable **Auto-memory cleaning** (e.g., when memory usage exceeds 80% or every 30 minutes).
+5.  *Note: Auto-cleaning only works if you have admin privileges enabled for the app.*
+
+### 4. Wintoys
+
+**Wintoys** is another excellent app available on the Microsoft Store to optimize Windows.
+
+*   **Boost Performance:** Use it to clear memory quickly.
+*   **Storage:** Safely remove **Windows Restore Points** (which can take up huge amounts of space).
+*   **Tweaks:** Fine-tune system animations and settings for better responsiveness.
+
+### 5. Disable Unnecessary Services
+
+Many Windows services run in the background without you knowing.
+
+1.  Press \`Win + R\`, type \`services.msc\`, and hit Enter.
+2.  Look for services you definitely don't need (e.g., "Connected User Experiences and Telemetry", "Fax", "Retail Demo Service").
+3.  Right-click > **Properties** > Change **Startup type** to **Disabled**.
+4.  *Warning: Be careful! Only disable services if you know what they do.*
+
+### Additional Tips
+
+*   **Defragment Drives:** If you are still using an HDD (Hard Disk Drive), search for "Defragment and Optimize Drives" in Windows and run it. (Not needed for SSDs).
+*   **Upgrade RAM:** If you have 8GB or less, upgrading to 16GB is the single best hardware upgrade you can make for multitasking.
+        `,
+        date: "2026-02-04"
+    },
+    {
         id: 3,
         title: "Real Racing 3 Shutting Down: End of an Era & Alternatives",
         category: "Tech",
