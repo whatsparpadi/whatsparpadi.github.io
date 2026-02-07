@@ -1,6 +1,73 @@
 // Data - 3 Example Blog Posts
 const BLOG_POSTS = [
     {
+        id: 6,
+        title: "Stop Using Monkeytype: 3 Better Alternatives to Improve Typing Speed",
+        category: "Tech",
+        shortDesc: "Monkeytype might be popular, but is it effective? Here are 3 better alternatives like TypeLit.io and NitroType that offer more value.",
+        image: "assets/stop_monkeytype.png",
+        content: `
+## Why You Should Stop Using Monkeytype
+
+**Monkeytype.com** is incredibly popular, but does it actually help you improve your typing in a meaningful way? The words often don't make sense together, giving no context or value to the user. It's great for a quick dopamine hit, but if you want to make better use of your time, try these alternatives instead.
+
+### 1. TypeLit.io
+
+**TypeLit.io** is a fantastic tool where you type out entire chapters from classic literature books like *Alice in Wonderland*, *1984*, *Pride and Prejudice*, and more.
+
+*   **The Benefit:** You aren't just typing random words; you are training yourself to **read and type** simultaneously.
+*   **Dual Value:** You get to read a book while improving your typing speed.
+*   **Similar Sites:** [TypersGuild.com](https://typersguild.com), [EnterTrained.app](https://entertrained.app)
+
+### 2. NitroType.com
+
+**NitroType.com** is a competitive typing game that gamifies the experience.
+
+*   **The Gameplay:** You race against 5 other real players towards the finish line by typing a given paragraph.
+*   **Progression:** Finishing races earns you in-game currency to buy better-looking cars, nitro, and other upgrades.
+*   **Why it works:** It's highly addictive and the competitive nature pushes you to type faster and more accurately under pressure. **I highly suggest this site!**
+
+### 3. TypingClub.com
+
+**TypingClub.com** is essentially the "Duolingo" of typing.
+
+*   **Structure:** It offers structured lessons that act as a serious course to improve your touch typing skills.
+*   **Experience:** It is fun, interactive, and perfect for beginners to advanced typists who want to fix their form.
+
+### Conclusion
+
+While Monkeytype is aesthetically pleasing, it often lacks the substance found in these alternatives. Now that you know about **TypeLit**, **NitroType**, and **TypingClub**, you can stop wasting time on random words and start building real skills (or having real fun!).
+        `,
+        date: "2026-02-07"
+    },
+    {
+        id: 5,
+        title: "The Odin Project vs Brototype",
+        category: "Tech",
+        shortDesc: "A comparison of The Odin Project and Brototype, exploring their similar origins and different paths in tech education.",
+        image: "assets/odin_vs_brototype.png",
+        content: `
+## The Odin Project vs Brototype: A Tale of Two Founders
+
+ **The Odin Project** was founded by **Erik Trautman**, while **Brototype** was founded by **Nikhil Kilivayil**. Their journey both are similar.
+
+**Erik Trautman** initially founded Odin Project for students who don't have the luxury of accessing private education to learn computer science, so he built a curriculum based on resources from web, including youtube, blogs, etc. The Odin Project is hosted at [theodinproject.com](https://www.theodinproject.com) where anyone can signup and start learning, founded in 2013.
+
+Meanwhile, **Nikhil Kilivayil** started with **100K coding challenge** which focuses on C/Java coding teaching the basics and concepts, that average students in engineering colleges, especially in Kerala, struggle to grasp. And he filled that gap. He posted this entire course on youtube in 2019.
+
+### Similar Paths
+
+Next thing, what Erik Trautman built was **Viking Education** in 2014, the first fully online software engineering program where students didn’t have to pay until they got a job.
+
+**Nikhil Kilivayil** also followed the similar path, by creating **Brototype**, a software training institute in the same year of 100K Coding Challenge, where the key selling point at least until 2023 was, students didn't have to pay until they got a job. Until they changed their structure completely.
+
+### Conclusion
+
+Did Nikhil Kilivayil copied Erik Trautman or are these just coincidences?
+        `,
+        date: "2026-02-07"
+    },
+    {
         id: 4,
         title: "How to Speed Up Your Old PC or Laptop (Windows 11 & Bloatware Guide)",
         category: "Tech",
@@ -333,6 +400,11 @@ function renderGrid(filterCategory) {
         : BLOG_POSTS.filter(post => post.category === filterCategory);
 
     filteredPosts.forEach(post => {
+        // Date Formatting
+        const dateObj = new Date(post.date);
+        const options = { year: 'numeric', month: 'short', day: 'numeric' };
+        const formattedDate = dateObj.toLocaleDateString('en-GB', options);
+
         // Calculate Reading Time & Content Length
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = post.content;
@@ -358,7 +430,7 @@ function renderGrid(filterCategory) {
                 <div class="card-overlay">
                     <h2 class="card-title">${post.title}</h2>
                     <p class="card-desc">
-                        ${post.category} • ${readingTime} min read
+                        ${formattedDate} • ${post.category} • ${readingTime} min read
                     </p>
                     <p class="card-desc" style="margin-top: 4px; font-size: 0.85rem; opacity: 0.8;">
                        ${post.shortDesc}
