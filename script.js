@@ -558,7 +558,13 @@ function parseMarkdown(markdown) {
         .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
 
         // Bold
-        .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+        .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+
+        // Italic (avoid matching list items using negative lookahead for space)
+        .replace(/\*(?!\s)(.*?)\*/gim, '<em>$1</em>')
+
+        // Links
+        .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
 
         // Code Block
         .replace(/```(\w+)?\n([\s\S]*?)```/g, (match, lang, code) => {
@@ -573,15 +579,15 @@ function parseMarkdown(markdown) {
         // Inline Code
         .replace(/`([^`]+)`/gim, '<code>$1</code>')
 
-        // Lists (Unordered)
-        .replace(/^\d+\. (.*$)/gim, '<ol><li>$1</li></ol>') // naive list regex, works for single lines
-        .replace(/^\- (.*$)/gim, '<ul><li>$1</li></ul>')   // naive list regex
+        // Lists (Unordered - support - and *)
+        .replace(/^\s*[\-\*]\s+(.*$)/gim, '<ul><li>$1</li></ul>')
 
-        // Paragraphs (naive: double newline = new paragraph, but clean up duplicate tags)
+        // Lists (Ordered)
+        .replace(/^\d+\.\s+(.*$)/gim, '<ol><li>$1</li></ol>')
+
+        // Paragraphs (naive: double newline = new paragraph)
         .replace(/\n\n/g, '</p><p>');
 
-    // Wrap in initial P tags if not starting with tag
-    // This is a simplified parser; for production, use a library :)
     return html;
 }
 
