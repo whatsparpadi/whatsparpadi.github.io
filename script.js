@@ -1,6 +1,79 @@
 // Data - 3 Example Blog Posts
 const BLOG_POSTS = [
     {
+        id: 7,
+        title: "Automate Weekly Windows Updates with Winget",
+        category: "Tech",
+        shortDesc: "Forget manual updates. Learn how to create a simple script that automatically upgrades all your Windows apps every week using Winget and Task Scheduler.",
+        image: "assets/winget_automation.png",
+        content: `
+## Automate Your Windows Updates
+
+Running updates manually is a chore. Here is a set-and-forget solution to keep your Windows apps up to date using **Winget** and **Task Scheduler**.
+
+Takes about 5 minutes to set up.
+
+---
+
+### Step 1: Create the PowerShell Script
+
+We need a script that runs the update command silently.
+
+1.  Create a folder \`C:\\scripts\` (or any location you prefer).
+2.  Create a new file named \`weekly-update.ps1\`.
+3.  Paste the following code inside:
+
+\`\`\`powershell
+Start-Process winget -ArgumentList "upgrade --all --silent --accept-package-agreements --accept-source-agreements" -Verb RunAs -Wait
+\`\`\`
+
+**What this does:**
+*   \`--silent\`: Runs without popping up windows for every app.
+*   \`--accept-package-agreements\`: Auto-accepts licenses.
+*   \`-Verb RunAs\`: Ensures it runs with Administrator privileges.
+*   \`-Wait\`: Waits for the process to finish.
+
+### Step 2: Schedule the Task
+
+Now, let's make Windows run this script automatically.
+
+1.  Press \`Win + R\`, type \`taskschd.msc\`, and hit Enter to open **Task Scheduler**.
+2.  Click **Create Task** (on the right pane).
+
+#### General Tab
+*   **Name:** Weekly Winget Update
+*   **Security Options:** Check **Run with highest privileges** (Crucial!).
+*   **Configure for:** Windows 10 or 11.
+
+#### Triggers Tab
+*   Click **New**.
+*   **Begin the task:** On a schedule.
+*   **Settings:** Select **Weekly**.
+*   Choose a day and time (e.g., **Sunday at 3:00 AM**).
+*   Make sure **Enabled** is checked.
+
+#### Actions Tab
+*   Click **New**.
+*   **Action:** Start a program.
+*   **Program/script:** \`powershell.exe\`
+*   **Add arguments:** \`-ExecutionPolicy Bypass -File "C:\\scripts\\weekly-update.ps1"\`
+*   **Start in:** \`C:\\scripts\`
+
+#### Conditions Tab (Optional)
+*   **Power:** Uncheck "Start the task only if the computer is on AC power" if you want it to run on laptops even when unplugged.
+
+#### Settings Tab
+*   Check **Run task as soon as possible after a scheduled start is missed**. This ensures you get updated even if your PC was off at 3 AM.
+
+---
+
+### That's It!
+
+Now, every week at your chosen time, Windows will silently check for updates and install them. You won't have to lift a finger.
+        `,
+        date: "2026-02-08"
+    },
+    {
         id: 6,
         title: "Stop Using Monkeytype: 3 Better Alternatives to Improve Typing Speed",
         category: "Tech",
@@ -548,45 +621,52 @@ function updateMetaTags(title, desc, image, url) {
 
 // Simple Markdown Parser (Regex Based)
 function parseMarkdown(markdown) {
-    let html = markdown
-        // Headers
+    let html = markdown;
+
+    // 1. Code Blocks
+    html = html.replace(/```(\w+)?\n([\s\S]*?)```/g, (match, lang, code) => {
+        return `
+            <div class="code-block-wrapper">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <pre><code class="language-${lang || 'text'}">${code.trim()}</code></pre>
+            </div>
+        `;
+    });
+
+    // 2. Headers & HR
+    html = html
+        .replace(/^---$/gim, '<hr>')
+        .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
         .replace(/^### (.*$)/gim, '<h3>$1</h3>')
         .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-        .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+        .replace(/^# (.*$)/gim, '<h1>$1</h1>');
 
-        // Blockquotes
-        .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
+    // 3. Blockquotes
+    html = html.replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>');
 
-        // Bold
+    // 4. Uniform Lists (Unordered)
+    html = html.replace(/((?:^\s*[\-\*]\s+.*$(?:\r?\n)?)+)/gim, (match) => {
+        const items = match.trim().split('\n');
+        const listItems = items.map(item => `<li>${item.replace(/^\s*[\-\*]\s+/, '')}</li>`).join('');
+        return `<ul>${listItems}</ul>`;
+    });
+
+    // 5. Uniform Lists (Ordered)
+    html = html.replace(/((?:^\d+\.\s+.*$(?:\r?\n)?)+)/gim, (match) => {
+        const items = match.trim().split('\n');
+        const listItems = items.map(item => `<li>${item.replace(/^\d+\.\s+/, '')}</li>`).join('');
+        return `<ol>${listItems}</ol>`;
+    });
+
+    // 6. Formatting & Links
+    html = html
         .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
-
-        // Italic (avoid matching list items using negative lookahead for space)
         .replace(/\*(?!\s)(.*?)\*/gim, '<em>$1</em>')
-
-        // Links
-        .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-
-        // Code Block
-        .replace(/```(\w+)?\n([\s\S]*?)```/g, (match, lang, code) => {
-            return `
-                <div class="code-block-wrapper">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre><code class="language-${lang || 'text'}">${code.trim()}</code></pre>
-                </div>
-            `;
-        })
-
-        // Inline Code
         .replace(/`([^`]+)`/gim, '<code>$1</code>')
+        .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
 
-        // Lists (Unordered - support - and *)
-        .replace(/^\s*[\-\*]\s+(.*$)/gim, '<ul><li>$1</li></ul>')
-
-        // Lists (Ordered)
-        .replace(/^\d+\.\s+(.*$)/gim, '<ol><li>$1</li></ol>')
-
-        // Paragraphs (naive: double newline = new paragraph)
-        .replace(/\n\n/g, '</p><p>');
+    // 7. Paragraphs (Double newline)
+    html = html.replace(/\n\n/g, '<p></p>');
 
     return html;
 }
