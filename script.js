@@ -1,6 +1,343 @@
 // Data - 3 Example Blog Posts
 const BLOG_POSTS = [
     {
+        id: 8,
+        title: "The Architecture of Tenet: A Full Narrative Breakdown",
+        category: "Tech",
+        shortDesc: "This is not just a time travel movie. A full breakdown of Tenet's entropy, inversion, and the temporal pincer movement.",
+        image: "assets/tenet_visual.png",
+        content: `
+## 🎬 Tenet
+**Directed by Christopher Nolan**
+
+This is not just a time travel movie.
+It is a **closed-loop time inversion thriller** built on determinism, entropy, and sacrifice.
+
+This blog will explain everything:
+
+*   What is inversion?
+*   What is the Algorithm?
+*   Who are the future humans?
+*   What is Tenet?
+*   Why does Neil die?
+*   Who is Priya?
+*   What happens after the movie ends?
+
+No fluff. Just clean structure.
+
+---
+
+### 1️⃣ The Core Concept: Entropy & Inversion
+
+Entropy = the direction of time.
+
+*   Normal entropy → time moves forward.
+*   Inverted entropy → time moves backward.
+
+In Tenet, scientists discover how to reverse entropy of objects and people using machines called **turnstiles**.
+
+When someone passes through a turnstile:
+
+*   They move backward through time.
+*   The world around them still moves forward.
+
+This explains:
+
+*   Bullets flying back into guns.
+*   Cars flipping “in reverse.”
+*   Fights where one person moves forward and the other backward.
+
+This is called **inversion**, not time travel.
+
+---
+
+### 2️⃣ The Bigger Threat: The Algorithm
+
+The Algorithm is NOT the same as inversion tech.
+
+#### 🔴 Inversion Tech
+
+*   Reverses entropy of individuals.
+*   Limited to objects or people inside a machine.
+*   Used throughout the movie.
+
+#### 🔵 The Algorithm
+
+*   Built by a scientist in the distant future.
+*   Can reverse entropy of the entire planet.
+*   Extinction-level device.
+
+If activated:
+
+*   The whole Earth would invert.
+*   Forward-moving humans and inverted matter would annihilate.
+*   The present timeline collapses.
+
+It’s basically a planet-scale entropy weapon.
+
+---
+
+### 3️⃣ Who Are the Future Humans?
+
+In the future:
+
+*   Climate collapse ruined Earth.
+*   Oceans rose.
+*   Resources collapsed.
+*   Civilization barely survives.
+
+They blame the past (us).
+
+Their logic:
+“If we reverse entropy of the planet, maybe we erase the past and survive.”
+
+It’s a gamble.
+
+They send instructions and inverted gold back in time to recruit someone.
+
+That person is Sator.
+
+---
+
+### 4️⃣ Who Is Sator?
+
+Sator:
+
+*   Russian oligarch.
+*   Dying of cancer.
+*   Nihilistic mindset: “If I can’t live, no one lives.”
+
+Future humans send him:
+
+*   Inverted gold.
+*   Instructions.
+*   Algorithm pieces hidden in the past.
+
+His job:
+
+*   Assemble the 9 pieces.
+*   Bury them.
+*   Connect them to a dead-man switch.
+*   When he dies → the Algorithm activates.
+
+He chooses to die during a happy memory on his yacht.
+
+He wants the world to end with him.
+
+---
+
+### 5️⃣ What Is Tenet?
+
+Tenet is a secret organization created across time.
+
+It exists to stop the Algorithm from being activated.
+
+Here’s the twist:
+
+The Protagonist founds Tenet in the future.
+
+But Tenet already exists in the present.
+
+Why?
+
+Because he will create it later.
+
+Closed loop.
+
+There is no first beginning.
+
+This is called a **bootstrap paradox**.
+
+Information has no origin.
+It exists in a time loop.
+
+---
+
+### 6️⃣ How Did Tenet Know About the Algorithm?
+
+Important question.
+
+The Protagonist learns about the Algorithm during the events of the movie.
+
+He survives.
+
+In his future, he creates Tenet using that knowledge.
+
+He sends Tenet operations backward in time.
+
+So Tenet already knows about the Algorithm
+because future-Protagonist already experienced it.
+
+There is no “original discovery.”
+It’s a causal loop.
+
+---
+
+### 7️⃣ Who Is Priya?
+
+Priya:
+
+*   Arms dealer.
+*   High-level Tenet operative.
+*   Works for Tenet, not Sator.
+
+She knows about:
+
+*   The 9 pieces.
+*   The future threat.
+*   Sator’s role.
+
+Because Tenet’s founder (future Protagonist) ensured that knowledge existed.
+
+At the end:
+She tries to kill Kat to eliminate loose ends.
+
+Tenet rule:
+“No loose ends.”
+
+The Protagonist kills Priya.
+
+This is the moment he becomes the true architect of Tenet.
+
+---
+
+### 8️⃣ The Red Team & Blue Team Battle
+
+Final battle at Stalsk-12.
+
+They are fighting Sator’s mercenaries.
+
+Red Team:
+
+*   Moving forward in time.
+
+Blue Team:
+
+*   Moving backward in time.
+
+Blue Team:
+
+*   Already experienced the battle.
+*   Inverted.
+*   Replay it backward to give intelligence.
+
+This is called a **temporal pincer movement**.
+
+They are not fighting each other.
+They are fighting Sator’s army from opposite time directions.
+
+---
+
+### 9️⃣ Why Does Neil Die?
+
+Neil is part of Tenet.
+
+At the end:
+He inverts.
+Goes back.
+Unlocks a gate.
+Takes a bullet meant for the Protagonist.
+
+The soldier who shoots him:
+Just sees an enemy and fires.
+He doesn’t understand the larger loop.
+
+Neil dies because he already died.
+
+“What’s happened, happened.”
+
+From Neil’s perspective:
+He has known the Protagonist for years.
+
+From the Protagonist’s perspective:
+Their friendship just started.
+
+That’s why the ending is emotional.
+
+---
+
+### 🔟 Does the World Get Destroyed?
+
+No.
+
+They stop the Algorithm before detonation.
+
+Sator dies.
+But the device is removed.
+The planet does not invert.
+
+The present survives.
+
+---
+
+### 1️⃣1️⃣ What Happens After the Movie Ends?
+
+The war isn’t over.
+
+Future humans still exist.
+
+Now the Protagonist understands:
+
+*   The threat is real.
+*   Tenet must exist.
+*   He is the one who must build it.
+
+So in his future, he:
+
+*   Builds Tenet.
+*   Recruits Neil at a younger age.
+*   Orchestrates the events of the film.
+*   Ensures everything unfolds exactly as it did.
+
+Closed loop complete.
+
+He cannot just “live normally.”
+
+Because Tenet already exists.
+Which means he must create it.
+
+---
+
+### 1️⃣2️⃣ Is Tenet Deterministic?
+
+Yes.
+
+There is only one timeline.
+
+No alternate versions.
+No branching universes.
+No rewriting.
+
+Everything that happens already happened.
+
+Free will exists emotionally.
+But structurally, fate is consistent.
+
+---
+
+### Final Understanding
+
+Tenet is not about time travel.
+
+It is about:
+
+*   Entropy
+*   Responsibility
+*   Sacrifice
+*   Determinism
+*   Acting even when the outcome is fixed
+
+The Protagonist becomes the architect of his own past.
+
+Neil becomes the emotional core.
+
+Sator becomes the nihilistic mirror.
+
+And the world survives — because it already did.
+        `,
+        date: "2026-02-09"
+    },
+    {
         id: 7,
         title: "Automate Weekly Windows Updates with Winget",
         category: "Tech",
