@@ -184,10 +184,13 @@ body {
 
 /* Blog Card */
 .blog-card {
+    display: block;
+    /* Ensure anchor tags behave like blocks */
     background: var(--card-bg);
     border-radius: 16px;
     overflow: hidden;
     margin-bottom: 20px;
+    /* Space between items */
     break-inside: avoid;
     /* Prevents card from splitting across columns */
     position: relative;

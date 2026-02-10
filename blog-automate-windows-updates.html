@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automate Weekly Windows Updates with Winget - What's Parpadi?</title>
+    <meta name="description"
+        content="Forget manual updates. Learn how to create a simple script that automatically upgrades all your Windows apps every week using Winget and Task Scheduler.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Automate Weekly Windows Updates with Winget">
+    <meta property="og:description"
+        content="Forget manual updates. Learn how to create a simple script that automatically upgrades all your Windows apps every week using Winget and Task Scheduler.">
+    <meta property="og:image" content="https://www.whatsparpadi.in/assets/winget_automation.png">
+    <meta property="og:url" content="https://www.whatsparpadi.in/blog-automate-windows-updates.html">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Automate Weekly Windows Updates with Winget">
+    <meta name="twitter:description"
+        content="Forget manual updates. Learn how to create a simple script that automatically upgrades all your Windows apps every week using Winget and Task Scheduler.">
+    <meta name="twitter:image" content="https://www.whatsparpadi.in/assets/winget_automation.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="https://www.instagram.com/whatsparpadi/" target="_blank" class="instagram-btn"
+            aria-label="Instagram Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">☀️</button>
+        <h1><a href="index.html" style="text-decoration:none; color:inherit;">what's parpadi?</a></h1>
+        <p>suggestions for real-life decisions</p>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-btn">&larr; Back to Home</a>
+
+        <article class="blog-post">
+            <div class="post-header">
+                <h1>Automate Weekly Windows Updates with Winget</h1>
+                <p class="post-date">Published on: 08 Feb 2026 • 2 min read</p>
+            </div>
+            <img src="assets/winget_automation.png" alt="Automate Weekly Windows Updates with Winget"
+                class="post-hero-image">
+            <div class="post-body markdown-content">
+                <h2>Automate Your Windows Updates</h2>
+                <p>Running updates manually is a chore. Here is a set-and-forget solution to keep your Windows apps up
+                    to date using <strong>Winget</strong> and <strong>Task Scheduler</strong>.</p>
+                <p>Takes about 5 minutes to set up.</p>
+                <hr>
+                <h3>Step 1: Create the PowerShell Script</h3>
+                <p>We need a script that runs the update command silently.</p>
+                <ol>
+                    <li>Create a folder <code>C:\scripts</code> (or any location you prefer).</li>
+                    <li>Create a new file named <code>weekly-update.ps1</code>.</li>
+                    <li>Paste the following code inside:</li>
+                </ol>
+                <div class="code-block-wrapper">
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    <pre><code class="language-powershell">Start-Process winget -ArgumentList "upgrade --all --silent --accept-package-agreements --accept-source-agreements" -Verb RunAs -Wait</code></pre>
+                </div>
+                <p><strong>What this does:</strong></p>
+                <ul>
+                    <li><code>--silent</code>: Runs without popping up windows for every app.</li>
+                    <li><code>--accept-package-agreements</code>: Auto-accepts licenses.</li>
+                    <li><code>-Verb RunAs</code>: Ensures it runs with Administrator privileges.</li>
+                    <li><code>-Wait</code>: Waits for the process to finish.</li>
+                </ul>
+                <h3>Step 2: Schedule the Task</h3>
+                <p>Now, let's make Windows run this script automatically.</p>
+                <ol>
+                    <li>Press <code>Win + R</code>, type <code>taskschd.msc</code>, and hit Enter to open <strong>Task
+                            Scheduler</strong>.</li>
+                    <li>Click <strong>Create Task</strong> (on the right pane).</li>
+                </ol>
+                <h4>General Tab</h4>
+                <ul>
+                    <li><strong>Name:</strong> Weekly Winget Update</li>
+                    <li><strong>Security Options:</strong> Check <strong>Run with highest privileges</strong>
+                        (Crucial!).</li>
+                    <li><strong>Configure for:</strong> Windows 10 or 11.</li>
+                </ul>
+                <h4>Triggers Tab</h4>
+                <ul>
+                    <li>Click <strong>New</strong>.</li>
+                    <li><strong>Begin the task:</strong> On a schedule.</li>
+                    <li><strong>Settings:</strong> Select <strong>Weekly</strong>.</li>
+                    <li>Choose a day and time (e.g., <strong>Sunday at 3:00 AM</strong>).</li>
+                    <li>Make sure <strong>Enabled</strong> is checked.</li>
+                </ul>
+                <h4>Actions Tab</h4>
+                <ul>
+                    <li>Click <strong>New</strong>.</li>
+                    <li><strong>Action:</strong> Start a program.</li>
+                    <li><strong>Program/script:</strong> <code>powershell.exe</code></li>
+                    <li><strong>Add arguments:</strong>
+                        <code>-ExecutionPolicy Bypass -File "C:\scripts\weekly-update.ps1"</code></li>
+                    <li><strong>Start in:</strong> <code>C:\scripts</code></li>
+                </ul>
+                <h4>Conditions Tab (Optional)</h4>
+                <ul>
+                    <li><strong>Power:</strong> Uncheck "Start the task only if the computer is on AC power" if you want
+                        it to run on laptops even when unplugged.</li>
+                </ul>
+                <h4>Settings Tab</h4>
+                <ul>
+                    <li>Check <strong>Run task as soon as possible after a scheduled start is missed</strong>. This
+                        ensures you get updated even if your PC was off at 3 AM.</li>
+                </ul>
+                <hr>
+                <h3>That's It!</h3>
+                <p>Now, every week at your chosen time, Windows will silently check for updates and install them. You
+                    won't have to lift a finger.</p>
+            </div>
+        </article>
+
+        <!-- Scroll to Top Button -->
+        <button id="scroll-top-btn" class="scroll-top-btn hidden" aria-label="Scroll to Top">↑ Top</button>
+    </main>
+
+    <footer class="site-footer">
+        <p>Created and managed by <a href="about.html">Pranav</a></p>
+    </footer>
+</body>
+
+</html>
