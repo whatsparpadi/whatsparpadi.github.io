@@ -12,8 +12,8 @@
     <meta property="og:title" content="Automate Weekly Windows Updates with Winget">
     <meta property="og:description"
         content="Forget manual updates. Learn how to create a simple script that automatically upgrades all your Windows apps every week using Winget and Task Scheduler.">
-    <meta property="og:image" content="https://www.whatsparpadi.in/assets/winget_automation.png">
-    <meta property="og:url" content="https://www.whatsparpadi.in/blog-automate-windows-updates.html">
+    <meta property="og:image" content="https://www.whatsparpadi.in/assets/images/winget_automation.png">
+    <meta property="og:url" content="https://www.whatsparpadi.in/blogs/automate-windows-updates-winget.html">
     <meta property="og:type" content="article">
 
     <!-- Twitter Card -->
@@ -21,20 +21,23 @@
     <meta name="twitter:title" content="Automate Weekly Windows Updates with Winget">
     <meta name="twitter:description"
         content="Forget manual updates. Learn how to create a simple script that automatically upgrades all your Windows apps every week using Winget and Task Scheduler.">
-    <meta name="twitter:image" content="https://www.whatsparpadi.in/assets/winget_automation.png">
+    <meta name="twitter:image" content="https://www.whatsparpadi.in/assets/images/winget_automation.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/icons/favicon.png">
 
     <!-- Fonts & Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- Scripts -->
-    <script src="script.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/darkmode.js" defer></script>
+    <script src="../js/scroll-top.js" defer></script>
+    <script src="../js/reading-time.js" defer></script>
 </head>
 
 <body>
@@ -49,19 +52,19 @@
             </svg>
         </a>
         <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">☀️</button>
-        <h1><a href="index.html" style="text-decoration:none; color:inherit;">what's parpadi?</a></h1>
+        <h1><a href="../index.html" style="text-decoration:none; color:inherit;">what's parpadi?</a></h1>
         <p>suggestions for real-life decisions</p>
     </header>
 
     <main class="container">
-        <a href="index.html" class="back-btn">&larr; Back to Home</a>
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
 
         <article class="blog-post">
             <div class="post-header">
                 <h1>Automate Weekly Windows Updates with Winget</h1>
-                <p class="post-date">Published on: 08 Feb 2026 • 2 min read</p>
+                <p class="post-date">Published on: 08 Feb 2026 • <span class="reading-time">2 min read</span></p>
             </div>
-            <img src="assets/winget_automation.png" alt="Automate Weekly Windows Updates with Winget"
+            <img src="../assets/images/winget_automation.png" alt="Automate Weekly Windows Updates with Winget"
                 class="post-hero-image">
             <div class="post-body markdown-content">
                 <h2>Automate Your Windows Updates</h2>
@@ -115,7 +118,8 @@
                     <li><strong>Action:</strong> Start a program.</li>
                     <li><strong>Program/script:</strong> <code>powershell.exe</code></li>
                     <li><strong>Add arguments:</strong>
-                        <code>-ExecutionPolicy Bypass -File "C:\scripts\weekly-update.ps1"</code></li>
+                        <code>-ExecutionPolicy Bypass -File "C:\scripts\weekly-update.ps1"</code>
+                    </li>
                     <li><strong>Start in:</strong> <code>C:\scripts</code></li>
                 </ul>
                 <h4>Conditions Tab (Optional)</h4>
@@ -140,7 +144,7 @@
     </main>
 
     <footer class="site-footer">
-        <p>Created and managed by <a href="about.html">Pranav</a></p>
+        <p>Created and managed by <a href="../about.html">Pranav</a></p>
     </footer>
 </body>
 

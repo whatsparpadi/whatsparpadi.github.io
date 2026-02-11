@@ -1,26 +1,3 @@
-// Theme Logic
-const themeToggle = document.getElementById('theme-toggle');
-
-function initTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-        if (themeToggle) themeToggle.textContent = '🌙';
-    } else {
-        document.body.classList.remove('dark-mode');
-        if (themeToggle) themeToggle.textContent = '☀️';
-    }
-}
-
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        const isDark = document.body.classList.contains('dark-mode');
-        themeToggle.textContent = isDark ? '🌙' : '☀️';
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-}
-
 // Copy Code Functionality (for blog pages)
 function copyCode(btn) {
     const codeBlock = btn.nextElementSibling.querySelector('code');
@@ -112,32 +89,3 @@ function closePopup() {
 }
 
 window.closePopup = closePopup;
-
-// Scroll to Top Logic
-const scrollTopBtn = document.getElementById('scroll-top-btn');
-
-if (scrollTopBtn) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) {
-            scrollTopBtn.classList.remove('hidden');
-            scrollTopBtn.classList.add('visible');
-        } else {
-            scrollTopBtn.classList.remove('visible');
-            setTimeout(() => {
-                if (!scrollTopBtn.classList.contains('visible')) {
-                    scrollTopBtn.classList.add('hidden');
-                }
-            }, 300);
-        }
-    });
-
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-// Initialize
-initTheme();
