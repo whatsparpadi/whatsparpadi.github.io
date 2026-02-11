@@ -65,13 +65,19 @@
 
                 <!-- Search Bar -->
                 <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Search blogs..." aria-label="Search blogs">
+                    <div class="search-controls">
+                        <select id="category-filter" aria-label="Filter by Category">
+                            <option value="all">All Categories</option>
+                        </select>
+                        <input type="text" id="search-input" placeholder="Search blogs..." aria-label="Search blogs">
+                    </div>
                     <div id="search-results" class="search-results hidden"></div>
                     <div id="tag-cloud" class="tag-cloud"></div>
                 </div>
             </header>
 
             <div id="blog-grid" class="masonry-grid">
+                <!-- Blog cards generated/filtered by JS or static -->
 
                 <!-- Blog: Tenet -->
                 <a href="blog/tenet-architecture-narrative-breakdown.html" class="blog-card"

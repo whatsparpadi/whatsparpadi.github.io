@@ -19,7 +19,7 @@ window.blogIndexData = [
         "title": "Stop Using Monkeytype: 3 Better Alternatives to Improve Typing Speed",
         "slug": "stop-using-monkeytype-alternatives.html",
         "description": "Monkeytype might be popular, but is it effective? Here are 3 better alternatives like TypeLit.io and NitroType that offer more value.",
-        "category": "Tech",
+        "category": "Productivity",
         "tags": ["typing", "monkeytype", "productivity", "learning", "typelit", "nitrotype"],
         "date": "2026-02-07"
     },

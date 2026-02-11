@@ -23,6 +23,27 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsContainer.innerHTML = '<div class="no-results">Search unavailable (missing data).</div>';
     }
 
+    // --- Category Filter Implementation ---
+    const categorySelect = document.getElementById('category-filter');
+
+    if (categorySelect && blogIndex.length > 0) {
+        // Extract unique categories
+        const categories = [...new Set(blogIndex.map(post => post.category).filter(Boolean))].sort();
+
+        // Populate dropdown
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = category;
+            categorySelect.appendChild(option);
+        });
+
+        // Handle category change
+        categorySelect.addEventListener('change', () => {
+            performSearch();
+        });
+    }
+
     // --- Tag Cloud Implementation ---
     const tagCloudContainer = document.getElementById('tag-cloud');
 
@@ -52,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tagBtn.className = 'tag-cloud-item';
             tagBtn.addEventListener('click', () => {
                 searchInput.value = tag;
-                searchInput.dispatchEvent(new Event('input'));
+                performSearch();
                 searchInput.focus();
             });
             tagCloudContainer.appendChild(tagBtn);
@@ -74,22 +95,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.trim();
+    const performSearch = () => {
+        const query = searchInput.value.trim();
+        const selectedCategory = categorySelect ? categorySelect.value : 'all';
+
         resultsContainer.innerHTML = '';
         selectedIndex = -1; // Reset selection on new search
 
-        if (query.length === 0) {
+        const hasQuery = query.length > 0;
+        const hasCategory = selectedCategory !== 'all';
+
+        // If no query and no category, hide results
+        if (!hasQuery && !hasCategory) {
             resultsContainer.classList.add('hidden');
             return;
         }
 
-        if (!fuse) return;
+        let results = [];
 
-        const results = fuse.search(query);
+        // 1. Text Search (Fuse.js)
+        if (hasQuery && fuse) {
+            results = fuse.search(query).map(r => r.item);
+        } else if (!hasQuery && hasCategory) {
+            // If only category matches, use all blogs as base
+            results = blogIndex;
+        } else if (hasQuery && !fuse) {
+            // If there's a query but Fuse isn't available, show no results
+            results = [];
+        } else {
+            // This case should ideally not be reached if hasQuery || hasCategory is true
+            // but as a fallback, if no query and no category, results should be empty
+            results = [];
+        }
+
+
+        // 2. Category Filter
+        if (hasCategory) {
+            results = results.filter(post => post.category === selectedCategory);
+        }
 
         if (results.length > 0) {
-            results.forEach(({ item }) => {
+            results.forEach((item) => {
                 const resultItem = document.createElement('a');
                 resultItem.href = `blog/${item.slug}`;
                 resultItem.className = 'search-result-item';
@@ -114,7 +160,9 @@ document.addEventListener('DOMContentLoaded', () => {
             resultsContainer.appendChild(div);
             resultsContainer.classList.remove('hidden');
         }
-    });
+    };
+
+    searchInput.addEventListener('input', performSearch);
 
     // Keyboard Navigation Listener
     searchInput.addEventListener('keydown', (e) => {
@@ -142,21 +190,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close results when clicking outside
     document.addEventListener('click', (e) => {
-        if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target) && !tagCloudContainer.contains(e.target)) {
+        if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target) && !tagCloudContainer.contains(e.target) && (!categorySelect || !categorySelect.contains(e.target))) {
             resultsContainer.classList.add('hidden');
         }
     });
 
-    // Check for query parameter (e.g., from tag clicks)
+    // Check for query parameter (e.g., from tag or category clicks)
     const urlParams = new URLSearchParams(window.location.search);
     const searchParam = urlParams.get('search');
+    const categoryParam = urlParams.get('category');
+
+    // Handle Category Param
+    if (categoryParam && categorySelect) {
+        // Wait for options to be populated (synchronous here but good practice)
+        const optionExists = Array.from(categorySelect.options).some(o => o.value === categoryParam);
+        if (optionExists) {
+            categorySelect.value = categoryParam;
+        }
+    }
+
+    // Handle Search Param
     if (searchParam) {
         searchInput.value = searchParam;
+    }
+
+    // Trigger initial search if either param exists
+    if (searchParam || categoryParam) {
         // Wait for fuse to initialize then search
         const checkFuse = setInterval(() => {
-            if (fuse) {
+            if (fuse || (blogIndex && blogIndex.length > 0)) { // Ensure data is ready
                 clearInterval(checkFuse);
-                searchInput.dispatchEvent(new Event('input'));
+                performSearch();
             }
         }, 100);
     }
