@@ -38,6 +38,8 @@
     <script src="../js/darkmode.js" defer></script>
     <script src="../js/scroll-top.js" defer></script>
     <script src="../js/reading-time.js" defer></script>
+    <script src="../js/blog-data.js" defer></script>
+    <script src="../js/related-posts.js" defer></script>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.whatsparpadi.in/blog/automate-windows-updates-winget.html">
@@ -66,6 +68,29 @@
       "dateModified": "2026-02-08"
     }
     </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.whatsparpadi.in/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tech",
+        "item": "https://www.whatsparpadi.in/index.html?category=Tech"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Automate Windows Updates"
+      }]
+    }
+    </script>
 </head>
 
 <body>
@@ -89,6 +114,10 @@
 
         <article class="blog-post">
             <div class="post-header">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a> &gt; <a href="../index.html?category=Tech">Tech</a> &gt; Automate
+                    Windows Updates
+                </div>
                 <h1>Automate Weekly Windows Updates with Winget</h1>
                 <p class="post-date">Published on: 08 Feb 2026 • <a href="../index.html?category=Tech"
                         class="category-link">Tech</a> • <span class="reading-time">2 min read</span></p>

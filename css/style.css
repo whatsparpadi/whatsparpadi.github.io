@@ -259,23 +259,40 @@ body {
 }
 
 /* Post View */
-.back-btn {
-    background: transparent;
-    border: none;
-    color: var(--accent-color);
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 20px;
+/* Post View Back Button */
+.back-btn,
+.back-link {
     display: inline-flex;
     align-items: center;
-    padding: 10px 0;
-    transition: color 0.2s;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 30px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.back-btn:hover {
-    color: #555;
-    text-decoration: underline;
+.back-btn:hover,
+.back-link:hover {
+    background-color: var(--heading-color);
+    color: var(--bg-color);
+    border-color: var(--heading-color);
+    text-decoration: none;
+    transform: translateX(-4px);
+    box-shadow: var(--shadow-sm);
+}
+
+body.dark-mode .back-btn:hover,
+body.dark-mode .back-link:hover {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
 }
 
 .blog-post {
@@ -1041,4 +1058,23 @@ body.dark-mode #search-input:focus {
     #search-input {
         width: 100%;
     }
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.breadcrumb a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--heading-color);
+    text-decoration: underline;
 }

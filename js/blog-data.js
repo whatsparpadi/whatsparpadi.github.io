@@ -1,5 +1,17 @@
 window.blogIndexData = [
     {
+        "title": "How Enterprise Email Really Works: Exchange Servers, Cloud Migration, Recovery & the AI Question",
+        "slug": "how-enterprise-email-really-works-exchange-cloud-migration-ai.html",
+        "description": "Most people think email means Gmail. But for enterprises, it's legal infrastructure. A deep dive into Microsoft Exchange, recovery, and why businesses don't just use Gmail.",
+        "category": "Tech",
+        "tags": ["exchange server", "microsoft 365", "cloud migration", "enterprise email", "disaster recovery", "email security", "AI in email", "backup strategy", "hybrid exchange"],
+        "date": "2026-02-11",
+        "readingTime": "6 min read",
+        "image": "assets/images/enterprise_email.png",
+        "id": "enterprise-email",
+        "author": "Pranav"
+    },
+    {
         "title": "The Architecture of Tenet: A Full Narrative Breakdown",
         "slug": "tenet-architecture-narrative-breakdown.html",
         "description": "This is not just a time travel movie. A full breakdown of Tenet's entropy, inversion, and the temporal pincer movement.",
