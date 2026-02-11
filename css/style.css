@@ -795,3 +795,75 @@ body.dark-mode .scroll-top-btn {
     /* Adjust hover to not rotate/move too much to avoid layout shift if needed, 
        but keeping scale is fine usually unless it causes overflow. */
 }
+
+/* Search Feature */
+.search-container {
+    max-width: 600px;
+    margin: 20px auto 30px;
+    position: relative;
+    width: 90%;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px solid var(--border-color);
+    font-size: 1rem;
+    font-family: inherit;
+    background: var(--card-bg);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--heading-color);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode #search-input:focus {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow-hover);
+    margin-top: 10px;
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+}
+
+.search-result-item {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s;
+    font-weight: 500;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background: var(--bg-color);
+    color: var(--heading-color);
+}
+
+.no-results {
+    padding: 15px;
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.8;
+}
