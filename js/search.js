@@ -23,8 +23,74 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsContainer.innerHTML = '<div class="no-results">Search unavailable (missing data).</div>';
     }
 
+    // --- Dynamic Grid Rendering ---
+    const blogGrid = document.getElementById('blog-grid');
+
+    const formatDate = (dateString) => {
+        const options = { day: '2-digit', month: 'short', year: 'numeric' };
+        return new Date(dateString).toLocaleDateString('en-GB', options);
+    };
+
+    const renderGrid = (items) => {
+        if (!blogGrid) return;
+        blogGrid.innerHTML = '';
+
+        if (items.length === 0) {
+            blogGrid.innerHTML = '<div class="no-results">No blogs found for this category.</div>';
+            return;
+        }
+
+        items.forEach((post, index) => {
+            const card = document.createElement('a');
+            card.href = `blog/${post.slug}`;
+            card.className = 'blog-card';
+            card.style.textDecoration = 'none';
+            card.style.color = 'inherit';
+
+            // Randomize card sizes for masonry layout
+            let sizeClass = 'medium';
+            if (index === 0 || index % 5 === 0) sizeClass = 'large';
+
+            card.innerHTML = `
+                <div class="card-image-wrapper">
+                    <img src="${post.image}" alt="${post.title}" class="card-image ${sizeClass}" loading="lazy">
+                    <div class="card-overlay">
+                        <h2 class="card-title">${post.title}</h2>
+                        <p class="card-desc">${formatDate(post.date)} • ${post.category} • <span class="reading-time">${post.readingTime}</span></p>
+                        <p class="card-desc" style="margin-top: 4px; font-size: 0.85rem; opacity: 0.8;">
+                            ${post.description}
+                        </p>
+                    </div>
+                </div>
+            `;
+            blogGrid.appendChild(card);
+        });
+    };
+
     // --- Category Filter Implementation ---
     const categorySelect = document.getElementById('category-filter');
+
+    // Unified View Updater
+    const updateView = () => {
+        const selectedCategory = categorySelect ? categorySelect.value : 'all';
+
+        // Update Grid
+        let gridItems = blogIndex;
+        if (selectedCategory !== 'all') {
+            gridItems = gridItems.filter(post => post.category === selectedCategory);
+        }
+        renderGrid(gridItems);
+
+        // Trigger search update if query exists
+        if (searchInput.value.trim().length > 0) {
+            performSearch();
+        }
+    };
+
+    // Initial Render
+    if (blogGrid && blogIndex.length > 0) {
+        renderGrid(blogIndex);
+    }
 
     if (categorySelect && blogIndex.length > 0) {
         // Extract unique categories
@@ -40,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Handle category change
         categorySelect.addEventListener('change', () => {
-            performSearch();
+            updateView();
         });
     }
 

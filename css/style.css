@@ -1022,6 +1022,23 @@ body.dark-mode #search-input:focus {
 .category-link:hover {
     background: var(--border-color);
     transform: translateY(-1px);
-    text-decoration: none;
     /* Ensure no underline on hover */
+}
+
+/* Mobile Responsiveness for Search */
+@media (max-width: 600px) {
+    .search-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #category-filter {
+        width: 100%;
+        min-width: auto;
+        /* Reset min-width to avoid overflow issues if any */
+    }
+
+    #search-input {
+        width: 100%;
+    }
 }

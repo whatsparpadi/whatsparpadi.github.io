@@ -12,7 +12,11 @@
             "time travel",
             "movie analysis"
         ],
-        "date": "2026-02-09"
+        "date": "2026-02-09",
+        "readingTime": "5 min read",
+        "image": "assets/images/tenet_visual.png",
+        "id": "tenet-breakdown",
+        "author": "Pranav"
     },
     {
         "title": "Automate Weekly Windows Updates with Winget",
@@ -26,7 +30,11 @@
             "powershell",
             "updates"
         ],
-        "date": "2026-02-08"
+        "date": "2026-02-08",
+        "readingTime": "2 min read",
+        "image": "assets/images/winget_automation.png",
+        "id": "winget-updates",
+        "author": "Pranav"
     },
     {
         "title": "Stop Using Monkeytype: 3 Better Alternatives to Improve Typing Speed",
@@ -41,7 +49,11 @@
             "typelit",
             "nitrotype"
         ],
-        "date": "2026-02-07"
+        "date": "2026-02-07",
+        "readingTime": "2 min read",
+        "image": "assets/images/stop_monkeytype.png",
+        "id": "monkeytype-alternatives",
+        "author": "Pranav"
     },
     {
         "title": "The Odin Project vs Brototype: A Tale of Two Founders",
@@ -55,7 +67,11 @@
             "web development",
             "education"
         ],
-        "date": "2026-02-07"
+        "date": "2026-02-07",
+        "readingTime": "2 min read",
+        "image": "assets/images/odin_vs_brototype.png",
+        "id": "odin-vs-brototype",
+        "author": "Pranav"
     },
     {
         "title": "How to Speed Up Your Old PC or Laptop (Windows 11 & Bloatware Guide)",
@@ -69,7 +85,11 @@
             "chris titus tech",
             "bloatware"
         ],
-        "date": "2026-02-04"
+        "date": "2026-02-04",
+        "readingTime": "3 min read",
+        "image": "assets/images/pc_speedup.png",
+        "id": "pc-speedup",
+        "author": "Pranav"
     },
     {
         "title": "Real Racing 3 Shutting Down: End of an Era & Alternatives",
@@ -84,7 +104,11 @@
             "shutdown",
             "alternatives"
         ],
-        "date": "2026-01-30"
+        "date": "2026-01-30",
+        "readingTime": "2 min read",
+        "image": "assets/images/real_racing_shutdown.png",
+        "id": "rr3-shutdown",
+        "author": "Pranav"
     },
     {
         "title": "How to Create a Business Website Yourself (No Freelancers Needed)",
@@ -99,7 +123,11 @@
             "github pages",
             "antigravity"
         ],
-        "date": "2026-01-29"
+        "date": "2026-01-29",
+        "readingTime": "5 min read",
+        "image": "assets/images/tech_website_building.png",
+        "id": "business-website",
+        "author": "Pranav"
     },
     {
         "title": "Top 3 Platforms for Free Game Giveaways",
@@ -113,6 +141,10 @@
             "amazon prime",
             "gaming"
         ],
-        "date": "2026-01-29"
+        "date": "2026-01-29",
+        "readingTime": "2 min read",
+        "image": "assets/images/gaming_giveaways.png",
+        "id": "game-giveaways",
+        "author": "Pranav"
     }
 ]
