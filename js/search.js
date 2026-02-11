@@ -47,9 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.textDecoration = 'none';
             card.style.color = 'inherit';
 
-            // Randomize card sizes for masonry layout
-            let sizeClass = 'medium';
-            if (index === 0 || index % 5 === 0) sizeClass = 'large';
+            // Dynamic card sizing based on reading time
+            let sizeClass = 'small';
+            const readingTimeText = post.readingTime || "";
+            const minutes = parseInt(readingTimeText) || 0;
+
+            if (minutes > 6) {
+                sizeClass = 'large';
+            } else if (minutes >= 4) {
+                sizeClass = 'medium';
+            } else {
+                sizeClass = 'small';
+            }
 
             card.innerHTML = `
                 <div class="card-image-wrapper">
