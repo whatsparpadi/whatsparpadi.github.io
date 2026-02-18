@@ -151,20 +151,13 @@
                     <li>And how AI may reshape this ecosystem</li>
                 </ul>
 
-                <h2>1. Why is it called “Exchange”?</h2>
+                <h2>1. Why is it called Exchange</h2>
                 <p>Microsoft Exchange Server was originally built to enable <strong>exchange of messages inside
-                        organizations</strong>.</p>
-                <p>Over time, it evolved into much more than email.</p>
-                <p>Exchange handles:</p>
-                <ul>
-                    <li>Email</li>
-                    <li>Calendars</li>
-                    <li>Contacts</li>
-                    <li>Meeting scheduling</li>
-                    <li>Shared mailboxes</li>
-                    <li>Resource booking (conference rooms, equipment)</li>
-                </ul>
-                <p>Acts as a centralized corporate communication engine.</p>
+                        organizations</strong>. Over time, it evolved into much more than email.</p>
+                <p>An exchange handles <strong>email, calendar, contacts, meeting scheduling, shared mailboxes, resource
+                        booking
+                        (conference rooms, equipment)</strong> and acts as a centralized corporate communication engine.
+                </p>
                 <p>Instead of every employee managing email independently, everything is managed through a central
                     server.</p>
 
@@ -186,66 +179,31 @@
                 </ul>
 
                 <h2>3. How Exchange Stores Email Data</h2>
-                <p>Exchange stores mailbox data inside a database file called:</p>
-                <p><strong>EDB (Exchange Database)</strong></p>
-                <p>This file contains:</p>
-                <ul>
-                    <li>All emails</li>
-                    <li>Attachments</li>
-                    <li>Folder structure</li>
-                    <li>Calendar data</li>
-                    <li>Contacts</li>
-                    <li>Metadata</li>
-                </ul>
+                <p>Exchange stores mailbox data inside a database file called <strong>EDB (Exchange Database)</strong>
+                    which contains all emails, attachments, folder structure, calendar data, contacts, metadata.</p>
                 <p>If the server crashes, the EDB file is the core data container.</p>
-                <p>Outlook users interact with:</p>
-                <ul>
-                    <li><strong>PST (Personal Storage Table)</strong> – backup/export files</li>
-                    <li><strong>OST (Offline Storage Table)</strong> – cached offline copy of mailbox</li>
-                </ul>
-                <p>Other ecosystems use:</p>
-                <ul>
-                    <li><strong>MBOX</strong> (used by Thunderbird, Gmail exports)</li>
-                    <li><strong>EML</strong> (single email file format)</li>
-                    <li><strong>MSG</strong> (Microsoft Outlook email file format)</li>
-                </ul>
+                <p>Outlook users interact with <strong>PST (Personal Storage Table)</strong> for backup/export files and
+                    <strong>OST (Offline Storage Table)</strong> for cached offline copy of mailbox.
+                </p>
+                <p>Other ecosystems use <strong>MBOX</strong> (used by Thunderbird, Gmail exports), <strong>EML</strong>
+                    (single email file format), <strong>MSG</strong> (Microsoft Outlook email file format).
+                </p>
                 <p>Understanding these formats is critical in migration and recovery scenarios.</p>
 
                 <h2>4. Why Email Data Recovery Matters</h2>
-                <p>In enterprises, email equals evidence.</p>
-                <p>It contains:</p>
-                <ul>
-                    <li>Contract negotiations</li>
-                    <li>Financial approvals</li>
-                    <li>Legal discussions</li>
-                    <li>HR records</li>
-                    <li>Customer commitments</li>
-                </ul>
-                <p>If email data is lost due to:</p>
-                <ul>
-                    <li>Hardware failure</li>
-                    <li>Ransomware</li>
-                    <li>Database corruption</li>
-                    <li>Accidental deletion</li>
-                    <li>Power failure</li>
-                </ul>
-                <p>The company can face:</p>
-                <ul>
-                    <li>Legal consequences</li>
-                    <li>Revenue loss</li>
-                    <li>Compliance violations</li>
-                    <li>Reputation damage</li>
-                </ul>
-                <p>That’s why recovery tools exist.</p>
-                <p>If an Exchange EDB file becomes corrupted, specialized tools are required to extract usable mailbox
+                <p>In enterprises, email is evidence.</p>
+                <p>It contains <strong>contract negotiations, financial approvals, legal discussions, HR records,
+                        customer
+                        commitments.</strong></p>
+                <p>If email data is lost due to <strong>hardware failure, ransomware, database corruption, accidental
+                        deletion, power failure</strong>, the company can face legal consequences, revenue loss,
+                    compliance violations, reputation damage.</p>
+                <p>If an Exchange EDB file becomes corrupted, specialized tools are needed to extract usable mailbox
                     data.</p>
-                <p>Microsoft provides built-in tools, but they often assume:</p>
-                <ul>
-                    <li>Healthy database structure</li>
-                    <li>Proper backups</li>
-                </ul>
-                <p>Real-world enterprise failures are messy.</p>
-                <p>This is where specialized recovery software becomes important.</p>
+                <p>Microsoft provides some built-in tools, but they assume we already follow best practices like
+                    <strong>healthy
+                        database structure, proper backups, regular maintenance.</strong>
+                </p>
 
                 <h2>5. Why Migration Is Complex</h2>
                 <p>Companies don’t stay on one system forever.</p>
@@ -314,7 +272,8 @@
                     builds products such as:</p>
                 <ul>
                     <li><strong><a href="https://www.edbmails.com/" target="_blank"
-                                rel="noopener">EdbMails</a></strong>: For Exchange
+                                rel="noopener">EdbMails</a></strong>:
+                        For Exchange
                         database
                         recovery and migration</li>
                     <li><strong><a href="https://www.sigsync.com/" target="_blank" rel="noopener">Sigsync</a></strong>:
