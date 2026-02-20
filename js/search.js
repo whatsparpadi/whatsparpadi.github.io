@@ -42,7 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         items.forEach((post, index) => {
             const card = document.createElement('a');
-            card.href = `blog/${post.slug}`;
+            const categorySlug = post.category ? post.category.toLowerCase().replace(/\s+/g, '-') : 'tech';
+            let siteRoot = window.SITE_ROOT || '.';
+            if (siteRoot.endsWith('/')) siteRoot = siteRoot.slice(0, -1);
+            card.href = `${siteRoot}/${categorySlug}/${post.slug}`;
             card.className = 'blog-card';
             card.style.textDecoration = 'none';
             card.style.color = 'inherit';
@@ -62,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             card.innerHTML = `
                 <div class="card-image-wrapper">
-                    <img src="${post.image}" alt="${post.title}" class="card-image ${sizeClass}" loading="lazy">
+                    <img src="${siteRoot}/${post.image}" alt="${post.title}" class="card-image ${sizeClass}" loading="lazy">
                     <div class="card-overlay">
                         <h2 class="card-title">${post.title}</h2>
                         <p class="card-desc">By ${post.author} • ${formatDate(post.date)} • ${post.category} • <span class="reading-time">${post.readingTime}</span></p>
@@ -212,7 +215,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (results.length > 0) {
             results.forEach((item) => {
                 const resultItem = document.createElement('a');
-                resultItem.href = `blog/${item.slug}`;
+                const categorySlug = item.category ? item.category.toLowerCase().replace(/\s+/g, '-') : 'tech';
+                let siteRoot = window.SITE_ROOT || '.';
+                if (siteRoot.endsWith('/')) siteRoot = siteRoot.slice(0, -1);
+                resultItem.href = `${siteRoot}/${categorySlug}/${item.slug}`;
                 resultItem.className = 'search-result-item';
 
                 // Create rich result card
@@ -273,14 +279,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check for query parameter (e.g., from tag or category clicks)
     const urlParams = new URLSearchParams(window.location.search);
     const searchParam = urlParams.get('search');
-    const categoryParam = urlParams.get('category');
+    let categoryParam = urlParams.get('category');
+
+    // Auto-detect category from path if no explicitly provided query param
+    if (!categoryParam) {
+        const pathParts = window.location.pathname.split('/').filter(Boolean);
+        if (pathParts.length > 0) {
+            let lastPart = pathParts[pathParts.length - 1];
+            if (lastPart.endsWith('.html')) {
+                lastPart = pathParts.length > 1 ? pathParts[pathParts.length - 2] : '';
+            }
+            if (['tech', 'movies', 'gaming', 'productivity', 'education', 'upcoming-projects'].includes(lastPart.toLowerCase())) {
+                categoryParam = lastPart.toLowerCase();
+            }
+        }
+    }
 
     // Handle Category Param
     if (categoryParam && categorySelect) {
         // Wait for options to be populated (synchronous here but good practice)
-        const optionExists = Array.from(categorySelect.options).some(o => o.value === categoryParam);
-        if (optionExists) {
-            categorySelect.value = categoryParam;
+        const matchedOption = Array.from(categorySelect.options).find(o => o.value.toLowerCase() === categoryParam.toLowerCase());
+        if (matchedOption) {
+            categorySelect.value = matchedOption.value;
         }
     }
 
