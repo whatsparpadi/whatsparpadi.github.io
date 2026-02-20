@@ -5,7 +5,7 @@ window.blogIndexData = [
         "description": "Most people think email means Gmail. But for enterprises, it's legal infrastructure. A deep dive into Microsoft Exchange, recovery, and why businesses don't just use Gmail.",
         "category": "Tech",
         "tags": ["exchange server", "microsoft 365", "cloud migration", "enterprise email", "disaster recovery", "email security", "AI in email", "backup strategy", "hybrid exchange"],
-        "date": "2026-02-11",
+        "date": "2026-02-19",
         "readingTime": "6 min read",
         "image": "assets/images/enterprise_email.png",
         "id": "enterprise-email",
