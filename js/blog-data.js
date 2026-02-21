@@ -1,7 +1,7 @@
 window.blogIndexData = [
     {
-        "title": "Thekku Island \u2013 Official Development Roadmap & Release Timeline",
-        "slug": "thekku-island-roadmap-release-timeline.html",
+        "title": "Thekku Island – Development Timeline, Insider Updates & Post-Launch Analysis",
+        "slug": "thekku-island-development-timeline-insider-updates-post-launch-analysis.html",
         "description": "A structured roadmap-style blog about the game \"Thekku Island\", releasing on February 27, 2026.",
         "category": "Gaming",
         "tags": [
