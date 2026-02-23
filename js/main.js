@@ -89,3 +89,13 @@ function closePopup() {
 }
 
 window.closePopup = closePopup;
+
+// FAQ Accordion Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            question.classList.toggle('active');
+        });
+    });
+});
