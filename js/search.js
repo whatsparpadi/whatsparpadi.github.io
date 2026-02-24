@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${siteRoot}/${post.image}" alt="${post.title}" class="card-image ${sizeClass}" loading="lazy">
                     <div class="card-overlay">
                         <h2 class="card-title">${post.title}</h2>
-                        <p class="card-desc">By ${post.author} • ${formatDate(post.date)} • ${post.category} • <span class="reading-time">${post.readingTime}</span></p>
+                        <p class="card-desc">By ${post.author} • ${formatDate(post.lastUpdated || post.date)} • ${post.category} • <span class="reading-time">${post.readingTime}</span></p>
                         <p class="card-desc" style="margin-top: 4px; font-size: 0.85rem; opacity: 0.8;">
                             ${post.description}
                         </p>

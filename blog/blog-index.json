@@ -19,7 +19,8 @@
         "readingTime": "6 min read",
         "image": "assets/images/thekku_island_roadmap.jpg",
         "id": "thekku-island-roadmap",
-        "author": "Pranav"
+        "author": "Pranav",
+        "lastUpdated": "2026-02-24"
     },
     {
         "title": "How Enterprise Email Really Works: Exchange Servers, Cloud Migration, Recovery & the AI Question",
@@ -41,7 +42,8 @@
         "readingTime": "6 min read",
         "image": "assets/images/enterprise_email.png",
         "id": "enterprise-email",
-        "author": "Pranav"
+        "author": "Pranav",
+        "lastUpdated": "2026-02-19"
     },
     {
         "title": "The Architecture of Tenet: A Full Narrative Breakdown",
@@ -60,7 +62,8 @@
         "readingTime": "5 min read",
         "image": "assets/images/tenet_visual.png",
         "id": "tenet-breakdown",
-        "author": "Pranav"
+        "author": "Pranav",
+        "lastUpdated": "2026-02-09"
     },
     {
         "title": "Automate Weekly Windows Updates with Winget",
@@ -78,7 +81,8 @@
         "readingTime": "2 min read",
         "image": "assets/images/winget_automation.png",
         "id": "winget-updates",
-        "author": "Pranav"
+        "author": "Pranav",
+        "lastUpdated": "2026-02-08"
     },
     {
         "title": "Stop Using Monkeytype: 3 Better Alternatives to Improve Typing Speed",
@@ -97,7 +101,8 @@
         "readingTime": "2 min read",
         "image": "assets/images/stop_monkeytype.png",
         "id": "monkeytype-alternatives",
-        "author": "Pranav"
+        "author": "Pranav",
+        "lastUpdated": "2026-02-07"
     },
     {
         "title": "The Odin Project vs Brototype: A Tale of Two Founders",
@@ -115,7 +120,8 @@
         "readingTime": "2 min read",
         "image": "assets/images/odin_vs_brototype.png",
         "id": "odin-vs-brototype",
-        "author": "Pranav"
+        "author": "Pranav",
+        "lastUpdated": "2026-02-07"
     },
     {
         "title": "How to Speed Up Your Old PC or Laptop (Windows 11 & Bloatware Guide)",
@@ -133,7 +139,8 @@
         "readingTime": "3 min read",
         "image": "assets/images/pc_speedup.png",
         "id": "pc-speedup",
-        "author": "Pranav"
+        "author": "Pranav",
+        "lastUpdated": "2026-02-04"
     },
     {
         "title": "Real Racing 3 Shutting Down: End of an Era & Alternatives",
@@ -152,7 +159,8 @@
         "readingTime": "2 min read",
         "image": "assets/images/real_racing_shutdown.png",
         "id": "rr3-shutdown",
-        "author": "Pranav"
+        "author": "Pranav",
+        "lastUpdated": "2026-01-30"
     },
     {
         "title": "How to Create a Business Website Yourself (No Freelancers Needed)",
@@ -171,7 +179,8 @@
         "readingTime": "5 min read",
         "image": "assets/images/tech_website_building.png",
         "id": "business-website",
-        "author": "Pranav"
+        "author": "Pranav",
+        "lastUpdated": "2026-01-29"
     },
     {
         "title": "Top 3 Platforms for Free Game Giveaways",
@@ -189,6 +198,7 @@
         "readingTime": "2 min read",
         "image": "assets/images/gaming_giveaways.png",
         "id": "game-giveaways",
-        "author": "Pranav"
+        "author": "Pranav",
+        "lastUpdated": "2026-01-29"
     }
 ]
