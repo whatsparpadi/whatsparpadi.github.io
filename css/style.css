@@ -1085,10 +1085,23 @@ body.dark-mode #search-input:focus {
     font-size: 0.9em;
 }
 
+.category-link {
+    display: inline-block;
+    color: var(--heading-color);
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
 .category-link:hover {
     background: var(--border-color);
     transform: translateY(-1px);
-    /* Ensure no underline on hover */
+    text-decoration: none;
 }
 
 /* Mobile Responsiveness for Search */

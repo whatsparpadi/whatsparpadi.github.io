@@ -10,7 +10,10 @@ window.blogIndexData = [
             "unreal engine 5",
             "survival horror",
             "indie game",
-            "development timeline"
+            "development timeline",
+            "indian horror game",
+            "forgotten villa",
+            "kamla"
         ],
         "date": "2026-02-21",
         "readingTime": "6 min read",
