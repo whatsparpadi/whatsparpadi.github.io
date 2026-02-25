@@ -20,7 +20,7 @@ window.blogIndexData = [
         "image": "assets/images/thekku_island_roadmap.jpg",
         "id": "thekku-island-roadmap",
         "author": "Pranav",
-        "lastUpdated": "2026-02-24"
+        "lastUpdated": "2026-02-25"
     },
     {
         "title": "How Enterprise Email Really Works: Exchange Servers, Cloud Migration, Recovery & the AI Question",
