@@ -715,6 +715,20 @@ body.dark-mode .submit-btn {
     margin-bottom: 1.5rem;
 }
 
+.post-date a:not(.category-link) {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.post-date a:not(.category-link):hover {
+    color: var(--heading-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+}
+
 .popup-close-btn {
     background: transparent;
     border: 2px solid var(--border-color);
