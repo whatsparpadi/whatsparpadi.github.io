@@ -13,14 +13,20 @@ window.blogIndexData = [
             "development timeline",
             "indian horror game",
             "forgotten villa",
-            "kamla"
+            "kamla",
+            "caseoh",
+            "streamer",
+            "low end pc",
+            "system requirements",
+            "gt 1030",
+            "rx 550"
         ],
         "date": "2026-02-21",
-        "readingTime": "6 min read",
+        "readingTime": "8 min read",
         "image": "assets/images/thekku_island_roadmap.jpg",
         "id": "thekku-island-roadmap",
         "author": "Pranav",
-        "lastUpdated": "2026-02-27"
+        "lastUpdated": "2026-03-04"
     },
     {
         "title": "How Enterprise Email Really Works: Exchange Servers, Cloud Migration, Recovery & the AI Question",
