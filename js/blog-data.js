@@ -22,7 +22,7 @@ window.blogIndexData = [
             "rx 550"
         ],
         "date": "2026-02-21",
-        "readingTime": "8 min read",
+        "readingTime": "9 min read",
         "image": "assets/images/thekku_island_roadmap.jpg",
         "id": "thekku-island-roadmap",
         "author": "Pranav",
