@@ -1,0 +1,574 @@
+diff --git a/blog/blog-index.json b/blog/blog-index.json
+index d2c8d24..a96a8ea 100644
+--- a/blog/blog-index.json
++++ b/blog/blog-index.json
+@@ -26,7 +26,7 @@
+         "image": "assets/images/thekku_island_roadmap.jpg",
+         "id": "thekku-island-roadmap",
+         "author": "Pranav",
+-        "lastUpdated": "2026-03-04"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "How Enterprise Email Really Works: Exchange Servers, Cloud Migration, Recovery & the AI Question",
+@@ -49,7 +49,7 @@
+         "image": "assets/images/enterprise_email.png",
+         "id": "enterprise-email",
+         "author": "Pranav",
+-        "lastUpdated": "2026-02-19"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "The Architecture of Tenet: A Full Narrative Breakdown",
+@@ -69,7 +69,7 @@
+         "image": "assets/images/tenet_visual.png",
+         "id": "tenet-breakdown",
+         "author": "Pranav",
+-        "lastUpdated": "2026-02-09"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "Automate Weekly Windows Updates with Winget",
+@@ -88,7 +88,7 @@
+         "image": "assets/images/winget_automation.png",
+         "id": "winget-updates",
+         "author": "Pranav",
+-        "lastUpdated": "2026-02-08"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "Stop Using Monkeytype: 3 Better Alternatives to Improve Typing Speed",
+@@ -108,7 +108,7 @@
+         "image": "assets/images/stop_monkeytype.png",
+         "id": "monkeytype-alternatives",
+         "author": "Pranav",
+-        "lastUpdated": "2026-02-07"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "The Odin Project vs Brototype: A Tale of Two Founders",
+@@ -127,7 +127,7 @@
+         "image": "assets/images/odin_vs_brototype.png",
+         "id": "odin-vs-brototype",
+         "author": "Pranav",
+-        "lastUpdated": "2026-02-07"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "How to Speed Up Your Old PC or Laptop (Windows 11 & Bloatware Guide)",
+@@ -146,7 +146,7 @@
+         "image": "assets/images/pc_speedup.png",
+         "id": "pc-speedup",
+         "author": "Pranav",
+-        "lastUpdated": "2026-02-04"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "Real Racing 3 Shutting Down: End of an Era & Alternatives",
+@@ -166,7 +166,7 @@
+         "image": "assets/images/real_racing_shutdown.png",
+         "id": "rr3-shutdown",
+         "author": "Pranav",
+-        "lastUpdated": "2026-01-30"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "How to Create a Business Website Yourself (No Freelancers Needed)",
+@@ -186,7 +186,7 @@
+         "image": "assets/images/tech_website_building.png",
+         "id": "business-website",
+         "author": "Pranav",
+-        "lastUpdated": "2026-01-29"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "Top 3 Platforms for Free Game Giveaways",
+@@ -205,6 +205,6 @@
+         "image": "assets/images/gaming_giveaways.png",
+         "id": "game-giveaways",
+         "author": "Pranav",
+-        "lastUpdated": "2026-01-29"
++        "lastUpdated": "2026-03-05"
+     }
+-]
+\ No newline at end of file
++]
+diff --git a/education/odin-project-vs-brototype.html b/education/odin-project-vs-brototype.html
+index d459535..6ab95f9 100644
+--- a/education/odin-project-vs-brototype.html
++++ b/education/odin-project-vs-brototype.html
+@@ -65,7 +65,7 @@
+         }
+       },
+       "datePublished": "2026-02-07",
+-      "dateModified": "2026-02-07"
++      "dateModified": "2026-03-05"
+     }
+     </script>
+ 
+@@ -119,8 +119,7 @@
+                     Odin Project vs Brototype
+                 </div>
+                 <h1>The Odin Project vs Brototype: A Tale of Two Founders</h1>
+-                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 07 Feb 2026 • Last Updated:
+-                    07 Feb 2026 • <a href="../index.html?category=Education" class="category-link">Education</a> • <span
++                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 07 Feb 2026 • Last Updated: 05 Mar 2026 • <a href="../index.html?category=Education" class="category-link">Education</a> • <span
+                         class="reading-time">2 min read</span></p>
+             </div>
+             <img src="../assets/images/odin_vs_brototype.png" alt="The Odin Project vs Brototype"
+@@ -175,4 +174,4 @@
+     </footer>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/gaming/real-racing-3-shutdown-alternatives.html b/gaming/real-racing-3-shutdown-alternatives.html
+index c461b4e..ec93c4f 100644
+--- a/gaming/real-racing-3-shutdown-alternatives.html
++++ b/gaming/real-racing-3-shutdown-alternatives.html
+@@ -65,7 +65,7 @@
+         }
+       },
+       "datePublished": "2026-01-30",
+-      "dateModified": "2026-01-30"
++      "dateModified": "2026-03-05"
+     }
+     </script>
+ 
+@@ -119,8 +119,7 @@
+                     Racing 3 Shutdown
+                 </div>
+                 <h1>Real Racing 3 Shutting Down: End of an Era & Alternatives</h1>
+-                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 30 Jan 2026 • Last Updated:
+-                    30 Jan 2026 • <a href="../index.html?category=Gaming" class="category-link">Gaming</a> • <span
++                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 30 Jan 2026 • Last Updated: 05 Mar 2026 • <a href="../index.html?category=Gaming" class="category-link">Gaming</a> • <span
+                         class="reading-time">2 min read</span></p>
+             </div>
+             <img src="../assets/images/real_racing_shutdown.png" alt="Real Racing 3 Shutting Down"
+@@ -223,4 +222,4 @@
+     </footer>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/gaming/thekku-island-development-timeline-insider-updates-post-launch-analysis.html b/gaming/thekku-island-development-timeline-insider-updates-post-launch-analysis.html
+index 41acaed..6b67420 100644
+--- a/gaming/thekku-island-development-timeline-insider-updates-post-launch-analysis.html
++++ b/gaming/thekku-island-development-timeline-insider-updates-post-launch-analysis.html
+@@ -72,7 +72,7 @@
+         }
+       },
+       "datePublished": "2026-02-21",
+-      "dateModified": "2026-03-04"
++      "dateModified": "2026-03-05"
+     }
+     </script>
+ 
+@@ -575,4 +575,4 @@
+     </footer>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/gaming/top-gaming-giveaway-platforms.html b/gaming/top-gaming-giveaway-platforms.html
+index 26d1bcc..6932e1d 100644
+--- a/gaming/top-gaming-giveaway-platforms.html
++++ b/gaming/top-gaming-giveaway-platforms.html
+@@ -65,7 +65,7 @@
+         }
+       },
+       "datePublished": "2026-01-29",
+-      "dateModified": "2026-01-29"
++      "dateModified": "2026-03-05"
+     }
+     </script>
+ 
+@@ -119,8 +119,7 @@
+                     Gaming Giveaways
+                 </div>
+                 <h1>Top 3 Platforms for Free Game Giveaways</h1>
+-                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 29 Jan 2026 • Last Updated:
+-                    29 Jan 2026 • <a href="../index.html?category=Gaming" class="category-link">Gaming</a> • <span
++                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 29 Jan 2026 • Last Updated: 05 Mar 2026 • <a href="../index.html?category=Gaming" class="category-link">Gaming</a> • <span
+                         class="reading-time">2 min read</span></p>
+             </div>
+             <img src="../assets/images/gaming_giveaways.png" alt="Top 3 Gaming Platforms for Free Giveaways"
+@@ -186,4 +185,4 @@
+     </footer>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/js/blog-data.js b/js/blog-data.js
+index 044e1c3..e47ffec 100644
+--- a/js/blog-data.js
++++ b/js/blog-data.js
+@@ -26,7 +26,7 @@ window.blogIndexData = [
+         "image": "assets/images/thekku_island_roadmap.jpg",
+         "id": "thekku-island-roadmap",
+         "author": "Pranav",
+-        "lastUpdated": "2026-03-04"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "How Enterprise Email Really Works: Exchange Servers, Cloud Migration, Recovery & the AI Question",
+@@ -49,7 +49,7 @@ window.blogIndexData = [
+         "image": "assets/images/enterprise_email.png",
+         "id": "enterprise-email",
+         "author": "Pranav",
+-        "lastUpdated": "2026-02-19"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "The Architecture of Tenet: A Full Narrative Breakdown",
+@@ -69,7 +69,7 @@ window.blogIndexData = [
+         "image": "assets/images/tenet_visual.png",
+         "id": "tenet-breakdown",
+         "author": "Pranav",
+-        "lastUpdated": "2026-02-09"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "Automate Weekly Windows Updates with Winget",
+@@ -88,7 +88,7 @@ window.blogIndexData = [
+         "image": "assets/images/winget_automation.png",
+         "id": "winget-updates",
+         "author": "Pranav",
+-        "lastUpdated": "2026-02-08"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "Stop Using Monkeytype: 3 Better Alternatives to Improve Typing Speed",
+@@ -108,7 +108,7 @@ window.blogIndexData = [
+         "image": "assets/images/stop_monkeytype.png",
+         "id": "monkeytype-alternatives",
+         "author": "Pranav",
+-        "lastUpdated": "2026-02-07"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "The Odin Project vs Brototype: A Tale of Two Founders",
+@@ -127,7 +127,7 @@ window.blogIndexData = [
+         "image": "assets/images/odin_vs_brototype.png",
+         "id": "odin-vs-brototype",
+         "author": "Pranav",
+-        "lastUpdated": "2026-02-07"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "How to Speed Up Your Old PC or Laptop (Windows 11 & Bloatware Guide)",
+@@ -146,7 +146,7 @@ window.blogIndexData = [
+         "image": "assets/images/pc_speedup.png",
+         "id": "pc-speedup",
+         "author": "Pranav",
+-        "lastUpdated": "2026-02-04"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "Real Racing 3 Shutting Down: End of an Era & Alternatives",
+@@ -166,7 +166,7 @@ window.blogIndexData = [
+         "image": "assets/images/real_racing_shutdown.png",
+         "id": "rr3-shutdown",
+         "author": "Pranav",
+-        "lastUpdated": "2026-01-30"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "How to Create a Business Website Yourself (No Freelancers Needed)",
+@@ -186,7 +186,7 @@ window.blogIndexData = [
+         "image": "assets/images/tech_website_building.png",
+         "id": "business-website",
+         "author": "Pranav",
+-        "lastUpdated": "2026-01-29"
++        "lastUpdated": "2026-03-05"
+     },
+     {
+         "title": "Top 3 Platforms for Free Game Giveaways",
+@@ -205,6 +205,6 @@ window.blogIndexData = [
+         "image": "assets/images/gaming_giveaways.png",
+         "id": "game-giveaways",
+         "author": "Pranav",
+-        "lastUpdated": "2026-01-29"
++        "lastUpdated": "2026-03-05"
+     }
+-];
+\ No newline at end of file
++];
+diff --git a/movies/tenet-architecture-narrative-breakdown.html b/movies/tenet-architecture-narrative-breakdown.html
+index 089d9cc..c9eda50 100644
+--- a/movies/tenet-architecture-narrative-breakdown.html
++++ b/movies/tenet-architecture-narrative-breakdown.html
+@@ -65,7 +65,7 @@
+         }
+       },
+       "datePublished": "2026-02-09",
+-      "dateModified": "2026-02-09"
++      "dateModified": "2026-03-05"
+     }
+     </script>
+ 
+@@ -119,8 +119,7 @@
+                     Architecture
+                 </div>
+                 <h1>The Architecture of Tenet: A Full Narrative Breakdown</h1>
+-                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 09 Feb 2026 • Last Updated:
+-                    09 Feb 2026 • <a href="../index.html?category=Movies" class="category-link">Movies</a> • <span
++                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 09 Feb 2026 • Last Updated: 05 Mar 2026 • <a href="../index.html?category=Movies" class="category-link">Movies</a> • <span
+                         class="reading-time">5 min read</span></p>
+             </div>
+             <img src="../assets/images/tenet_visual.png" alt="The Architecture of Tenet" class="post-hero-image">
+@@ -359,4 +358,4 @@
+     </footer>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/productivity/stop-using-monkeytype-alternatives.html b/productivity/stop-using-monkeytype-alternatives.html
+index 144d3f3..ad08650 100644
+--- a/productivity/stop-using-monkeytype-alternatives.html
++++ b/productivity/stop-using-monkeytype-alternatives.html
+@@ -65,7 +65,7 @@
+         }
+       },
+       "datePublished": "2026-02-07",
+-      "dateModified": "2026-02-07"
++      "dateModified": "2026-03-05"
+     }
+     </script>
+ 
+@@ -119,8 +119,7 @@
+                     &gt; Stop Using Monkeytype
+                 </div>
+                 <h1>Stop Using Monkeytype: 3 Better Alternatives to Improve Typing Speed</h1>
+-                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 07 Feb 2026 • Last Updated:
+-                    07 Feb 2026 • <a href="../index.html?category=Productivity" class="category-link">Productivity</a> •
++                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 07 Feb 2026 • Last Updated: 05 Mar 2026 • <a href="../index.html?category=Productivity" class="category-link">Productivity</a> •
+                     <span class="reading-time">2 min read</span></p>
+             </div>
+             <img src="../assets/images/stop_monkeytype.png" alt="Stop Using Monkeytype" class="post-hero-image">
+@@ -196,4 +195,4 @@
+     </footer>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/sitemap.xml b/sitemap.xml
+index 93a71f2..8491dd2 100644
+--- a/sitemap.xml
++++ b/sitemap.xml
+@@ -3,13 +3,13 @@
+   <!-- Core Pages -->
+   <url>
+     <loc>https://www.whatsparpadi.in/</loc>
+-    <lastmod>2026-03-04</lastmod>
++    <lastmod>2026-03-05</lastmod>
+     <changefreq>weekly</changefreq>
+     <priority>1.0</priority>
+   </url>
+   <url>
+     <loc>https://www.whatsparpadi.in/about.html</loc>
+-    <lastmod>2026-02-20</lastmod>
++    <lastmod>2026-03-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+@@ -17,62 +17,63 @@
+   <!-- Blog Posts -->
+   <url>
+     <loc>https://www.whatsparpadi.in/gaming/thekku-island-development-timeline-insider-updates-post-launch-analysis.html</loc>
+-    <lastmod>2026-03-04</lastmod>
++    <lastmod>2026-03-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+   <url>
+     <loc>https://www.whatsparpadi.in/tech/how-enterprise-email-really-works-exchange-cloud-migration-ai.html</loc>
+-    <lastmod>2026-02-19</lastmod>
++    <lastmod>2026-03-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+   <url>
+     <loc>https://www.whatsparpadi.in/movies/tenet-architecture-narrative-breakdown.html</loc>
+-    <lastmod>2026-02-09</lastmod>
++    <lastmod>2026-03-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+   <url>
+     <loc>https://www.whatsparpadi.in/tech/automate-windows-updates-winget.html</loc>
+-    <lastmod>2026-02-08</lastmod>
++    <lastmod>2026-03-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+   <url>
+     <loc>https://www.whatsparpadi.in/productivity/stop-using-monkeytype-alternatives.html</loc>
+-    <lastmod>2026-02-07</lastmod>
++    <lastmod>2026-03-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+   <url>
+     <loc>https://www.whatsparpadi.in/education/odin-project-vs-brototype.html</loc>
+-    <lastmod>2026-02-07</lastmod>
++    <lastmod>2026-03-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+   <url>
+     <loc>https://www.whatsparpadi.in/tech/speed-up-old-pc-windows-11.html</loc>
+-    <lastmod>2026-02-04</lastmod>
++    <lastmod>2026-03-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+   <url>
+     <loc>https://www.whatsparpadi.in/gaming/real-racing-3-shutdown-alternatives.html</loc>
+-    <lastmod>2026-01-30</lastmod>
++    <lastmod>2026-03-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+   <url>
+     <loc>https://www.whatsparpadi.in/tech/build-static-business-website-ai.html</loc>
+-    <lastmod>2026-01-29</lastmod>
++    <lastmod>2026-03-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+   <url>
+     <loc>https://www.whatsparpadi.in/gaming/top-gaming-giveaway-platforms.html</loc>
+-    <lastmod>2026-01-29</lastmod>
++    <lastmod>2026-03-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+ </urlset>
++
+diff --git a/tech/automate-windows-updates-winget.html b/tech/automate-windows-updates-winget.html
+index ba32409..5ecab8f 100644
+--- a/tech/automate-windows-updates-winget.html
++++ b/tech/automate-windows-updates-winget.html
+@@ -65,7 +65,7 @@
+         }
+       },
+       "datePublished": "2026-02-08",
+-      "dateModified": "2026-02-08"
++      "dateModified": "2026-03-05"
+     }
+     </script>
+ 
+@@ -119,8 +119,7 @@
+                     Windows Updates
+                 </div>
+                 <h1>Automate Weekly Windows Updates with Winget</h1>
+-                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 08 Feb 2026 • Last Updated:
+-                    08 Feb 2026 • <a href="../index.html?category=Tech" class="category-link">Tech</a> • <span
++                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 08 Feb 2026 • Last Updated: 05 Mar 2026 • <a href="../index.html?category=Tech" class="category-link">Tech</a> • <span
+                         class="reading-time">2 min read</span></p>
+             </div>
+             <img src="../assets/images/winget_automation.png" alt="Automate Weekly Windows Updates with Winget"
+@@ -215,4 +214,4 @@
+     </footer>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/tech/build-static-business-website-ai.html b/tech/build-static-business-website-ai.html
+index aaf3f0e..07318d1 100644
+--- a/tech/build-static-business-website-ai.html
++++ b/tech/build-static-business-website-ai.html
+@@ -65,7 +65,7 @@
+         }
+       },
+       "datePublished": "2026-01-29",
+-      "dateModified": "2026-01-29"
++      "dateModified": "2026-03-05"
+     }
+     </script>
+ 
+@@ -119,8 +119,7 @@
+                     Business Website
+                 </div>
+                 <h1>How to Create a Business Website Yourself (No Freelancers Needed)</h1>
+-                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 29 Jan 2026 • Last Updated:
+-                    29 Jan 2026 • <a href="../index.html?category=Tech" class="category-link">Tech</a> • <span
++                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 29 Jan 2026 • Last Updated: 05 Mar 2026 • <a href="../index.html?category=Tech" class="category-link">Tech</a> • <span
+                         class="reading-time">5 min read</span></p>
+             </div>
+             <img src="../assets/images/tech_website_building.png" alt="How to Build Your Own Business Website"
+@@ -260,4 +259,4 @@
+     </footer>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/tech/how-enterprise-email-really-works-exchange-cloud-migration-ai.html b/tech/how-enterprise-email-really-works-exchange-cloud-migration-ai.html
+index ff1ea50..437e1b5 100644
+--- a/tech/how-enterprise-email-really-works-exchange-cloud-migration-ai.html
++++ b/tech/how-enterprise-email-really-works-exchange-cloud-migration-ai.html
+@@ -67,7 +67,7 @@
+         }
+       },
+       "datePublished": "2026-02-19",
+-      "dateModified": "2026-02-19"
++      "dateModified": "2026-03-05"
+     }
+     </script>
+ 
+@@ -129,8 +129,7 @@
+                 </div>
+                 <h1>How Enterprise Email Really Works: Exchange Servers, Cloud Migration, Recovery & the AI Question
+                 </h1>
+-                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 19 Feb 2026 • Last Updated:
+-                    19 Feb 2026 • <a href="../index.html?category=Tech" class="category-link">Tech</a> • <span
++                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 19 Feb 2026 • Last Updated: 05 Mar 2026 • <a href="../index.html?category=Tech" class="category-link">Tech</a> • <span
+                         class="reading-time">6 min read</span></p>
+             </div>
+             <img src="../assets/images/enterprise_email.png" alt="Enterprise Email Infrastructure"
+@@ -337,4 +336,4 @@
+ 
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/tech/speed-up-old-pc-windows-11.html b/tech/speed-up-old-pc-windows-11.html
+index 81b155c..1716a8c 100644
+--- a/tech/speed-up-old-pc-windows-11.html
++++ b/tech/speed-up-old-pc-windows-11.html
+@@ -65,7 +65,7 @@
+         }
+       },
+       "datePublished": "2026-02-04",
+-      "dateModified": "2026-02-04"
++      "dateModified": "2026-03-05"
+     }
+     </script>
+ 
+@@ -119,8 +119,7 @@
+                     Old PC
+                 </div>
+                 <h1>How to Speed Up Your Old PC or Laptop (Windows 11 & Bloatware Guide)</h1>
+-                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 04 Feb 2026 • Last Updated:
+-                    04 Feb 2026 • <a href="../index.html?category=Tech" class="category-link">Tech</a> • <span
++                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 04 Feb 2026 • Last Updated: 05 Mar 2026 • <a href="../index.html?category=Tech" class="category-link">Tech</a> • <span
+                         class="reading-time">3 min read</span></p>
+             </div>
+             <img src="../assets/images/pc_speedup.png" alt="How to Speed Up Your Old PC or Laptop"
+@@ -240,4 +239,4 @@
+     </footer>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
