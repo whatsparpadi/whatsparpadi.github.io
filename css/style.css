@@ -165,40 +165,63 @@ body {
     font-size: 1.1rem;
 }
 
-/* Masonry Grid */
+/* CSS Grid with Dynamic Spans */
 .masonry-grid {
-    column-count: 3;
-    column-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    gap: 20px;
+    grid-auto-flow: dense;
 }
 
 @media (max-width: 900px) {
     .masonry-grid {
-        column-count: 2;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 600px) {
     .masonry-grid {
-        column-count: 1;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+        /* Keep uniform height on mobile */
+    }
+
+    .blog-card.large,
+    .blog-card.medium,
+    .blog-card.small {
+        grid-column: 1 / -1 !important;
+        grid-row: span 1 !important;
     }
 }
 
 /* Blog Card */
 .blog-card {
     display: block;
-    /* Ensure anchor tags behave like blocks */
     background: var(--card-bg);
     border-radius: 16px;
     overflow: hidden;
-    margin-bottom: 20px;
-    /* Space between items */
-    break-inside: avoid;
-    /* Prevents card from splitting across columns */
     position: relative;
     cursor: pointer;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     transition: var(--transition);
     will-change: transform;
+    height: 100%;
+}
+
+.blog-card.small {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.blog-card.medium {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.blog-card.large {
+    grid-column: span 2;
+    grid-row: span 2;
 }
 
 .blog-card:hover {
@@ -209,26 +232,14 @@ body {
 .card-image-wrapper {
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
 .card-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     object-fit: cover;
-}
-
-/* Dynamic Card Heights */
-.card-image.small {
-    height: 250px;
-}
-
-.card-image.medium {
-    height: 350px;
-}
-
-.card-image.large {
-    height: 500px;
 }
 
 /* Overlay Text */

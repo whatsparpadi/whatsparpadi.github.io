@@ -46,10 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
             let siteRoot = window.SITE_ROOT || '.';
             if (siteRoot.endsWith('/')) siteRoot = siteRoot.slice(0, -1);
             card.href = `${siteRoot}/${categorySlug}/${post.slug}`;
-            card.className = 'blog-card';
-            card.style.textDecoration = 'none';
-            card.style.color = 'inherit';
-
             // Dynamic card sizing based on reading time
             let sizeClass = 'small';
             const readingTimeText = post.readingTime || "";
@@ -63,9 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 sizeClass = 'small';
             }
 
+            card.className = `blog-card ${sizeClass}`;
+            card.style.textDecoration = 'none';
+            card.style.color = 'inherit';
+
             card.innerHTML = `
                 <div class="card-image-wrapper">
-                    <img src="${siteRoot}/${post.image}" alt="${post.title}" class="card-image ${sizeClass}" loading="lazy">
+                    <img src="${siteRoot}/${post.image}" alt="${post.title}" class="card-image" loading="lazy">
                     <div class="card-overlay">
                         <h2 class="card-title">${post.title}</h2>
                         <p class="card-desc">By ${post.author} • ${formatDate(post.lastUpdated || post.date)} • ${post.category} • <span class="reading-time">${post.readingTime}</span></p>
