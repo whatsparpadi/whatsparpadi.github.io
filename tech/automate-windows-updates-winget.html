@@ -91,6 +91,48 @@
       }]
     }
     </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can I automate Windows app updates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can automate Windows app updates by creating a simple PowerShell script using Winget and scheduling it to run weekly with Windows Task Scheduler."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the PowerShell command to update all apps with Winget silently?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The command is: Start-Process winget -ArgumentList \"upgrade --all --silent --accept-package-agreements --accept-source-agreements\" -Verb RunAs -Wait"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I make the Task Scheduler script run with Administrator privileges?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Task Scheduler, under the 'General' tab for your task, check the box that says 'Run with highest privileges'."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if my PC is off when the scheduled update task is supposed to run?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the Task Scheduler 'Settings' tab, check the option 'Run task as soon as possible after a scheduled start is missed'. This ensures the updates will run the next time your PC is turned on."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
