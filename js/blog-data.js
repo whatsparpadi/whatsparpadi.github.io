@@ -1,5 +1,25 @@
 window.blogIndexData = [
     {
+        "title": "The 5 Goals Every Influencer Reel Should Achieve (Brand Promotion Strategy)",
+        "slug": "influencer-marketing-goals.html",
+        "description": "Understanding the core goals of influencer marketing: Awareness, Remarketing, Retention, and Advocacy.",
+        "category": "Marketing",
+        "tags": [
+            "influencer marketing",
+            "marketing goals",
+            "brand awareness",
+            "remarketing",
+            "customer retention",
+            "brand advocacy"
+        ],
+        "date": "2026-03-13",
+        "readingTime": "2 min read",
+        "image": "assets/images/influencer_marketing.png",
+        "id": "influencer-marketing-goals",
+        "author": "Pranav",
+        "lastUpdated": "2026-03-13"
+    },
+    {
         "title": "Thekku Island Review – Kerala’s First 3D Horror Game, Performance, Gameplay & Post-Launch Analysis",
         "slug": "thekku-island-development-timeline-insider-updates-post-launch-analysis.html",
         "description": "Dive into the development timeline, insider updates, and release details of Thekku Island, Kerala's first 3D survival horror game built on Unreal Engine 5.",

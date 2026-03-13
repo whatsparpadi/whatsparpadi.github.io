@@ -46,18 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let siteRoot = window.SITE_ROOT || '.';
             if (siteRoot.endsWith('/')) siteRoot = siteRoot.slice(0, -1);
             card.href = `${siteRoot}/${categorySlug}/${post.slug}`;
-            // Dynamic card sizing based on reading time
+            // Set all cards to a uniform size category to avoid masonry staggering
             let sizeClass = 'small';
-            const readingTimeText = post.readingTime || "";
-            const minutes = parseInt(readingTimeText) || 0;
-
-            if (minutes > 6) {
-                sizeClass = 'large';
-            } else if (minutes >= 4) {
-                sizeClass = 'medium';
-            } else {
-                sizeClass = 'small';
-            }
 
             card.className = `blog-card ${sizeClass}`;
             card.style.textDecoration = 'none';
