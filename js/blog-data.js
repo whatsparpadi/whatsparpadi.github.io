@@ -2,7 +2,7 @@ window.blogIndexData = [
     {
         "title": "The 5 Goals Every Influencer Reel Should Achieve (Brand Promotion Strategy)",
         "slug": "influencer-marketing-goals.html",
-        "description": "Understanding the core goals of influencer marketing: Awareness, Remarketing, Retention, and Advocacy.",
+        "description": "Understanding the core goals of influencer marketing: Awareness, Consideration, Remarketing, Retention, and Creator Advocacy.",
         "category": "Marketing",
         "tags": [
             "influencer marketing",
