@@ -1,5 +1,25 @@
 window.blogIndexData = [
     {
+        "title": "Beginner’s Guide to the 2026 F1 Regulations: Everything You Need to Know",
+        "slug": "beginners-guide-to-2026-f1-regulations.html",
+        "description": "If you’re new to F1 in 2026, this guide is for you. Everything from super-clipping to the new 50/50 power split explained simply.",
+        "category": "Racing",
+        "path": "racing/formula1/beginners-guide-to-2026-f1-regulations.html",
+        "tags": [
+            "formula 1",
+            "f1 2026",
+            "racing",
+            "motorsport",
+            "super clipping"
+        ],
+        "date": "2026-03-15",
+        "readingTime": "4 min read",
+        "image": "assets/images/f1_2026_regulations.jpeg",
+        "id": "f1-2026-guide",
+        "author": "Pranav",
+        "lastUpdated": "2026-03-15"
+    },
+    {
         "title": "The 5 Goals Every Influencer Reel Should Achieve (Brand Promotion Strategy)",
         "slug": "influencer-marketing-goals.html",
         "description": "Understanding the core goals of influencer marketing: Awareness, Consideration, Remarketing, Retention, and Creator Advocacy.",

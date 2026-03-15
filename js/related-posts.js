@@ -52,10 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
     relatedContainer.innerHTML = `
         <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Read Next</h3>
         <div class="related-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1)); gap: 20px;">
-            ${relatedPosts.map(post => `
-                <a href="${post.slug}" class="related-card" style="text-decoration: none; color: inherit; display: block; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; transition: transform 0.2s;">
+            ${relatedPosts.map(post => {
+                let siteRoot = window.SITE_ROOT || '.';
+                if (siteRoot.endsWith('/')) siteRoot = siteRoot.slice(0, -1);
+                const href = post.path ? `${siteRoot}/${post.path}` : post.slug;
+                
+                return `
+                <a href="${href}" class="related-card" style="text-decoration: none; color: inherit; display: block; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; transition: transform 0.2s;">
                     <div style="height: 160px; overflow: hidden;">
-                        <img src="../${post.image}" alt="${post.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="${siteRoot}/${post.image}" alt="${post.title}" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div style="padding: 15px;">
                         <span style="font-size: 0.8rem; color: var(--heading-color); font-weight: bold; background: var(--code-bg); padding: 4px 8px; border-radius: 4px;">${post.category}</span>

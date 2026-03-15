@@ -42,10 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         items.forEach((post, index) => {
             const card = document.createElement('a');
-            const categorySlug = post.category ? post.category.toLowerCase().replace(/\s+/g, '-') : 'tech';
             let siteRoot = window.SITE_ROOT || '.';
             if (siteRoot.endsWith('/')) siteRoot = siteRoot.slice(0, -1);
-            card.href = `${siteRoot}/${categorySlug}/${post.slug}`;
+            
+            if (post.path) {
+                card.href = `${siteRoot}/${post.path}`;
+            } else {
+                const categorySlug = post.category ? post.category.toLowerCase().replace(/\s+/g, '-') : 'tech';
+                card.href = `${siteRoot}/${categorySlug}/${post.slug}`;
+            }
+            
             // Set all cards to a uniform size category to avoid masonry staggering
             let sizeClass = 'small';
 
@@ -205,10 +211,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (results.length > 0) {
             results.forEach((item) => {
                 const resultItem = document.createElement('a');
-                const categorySlug = item.category ? item.category.toLowerCase().replace(/\s+/g, '-') : 'tech';
                 let siteRoot = window.SITE_ROOT || '.';
                 if (siteRoot.endsWith('/')) siteRoot = siteRoot.slice(0, -1);
-                resultItem.href = `${siteRoot}/${categorySlug}/${item.slug}`;
+                
+                if (item.path) {
+                    resultItem.href = `${siteRoot}/${item.path}`;
+                } else {
+                    const categorySlug = item.category ? item.category.toLowerCase().replace(/\s+/g, '-') : 'tech';
+                    resultItem.href = `${siteRoot}/${categorySlug}/${item.slug}`;
+                }
+                
                 resultItem.className = 'search-result-item';
 
                 // Create rich result card
