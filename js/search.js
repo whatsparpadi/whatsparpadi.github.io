@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateView = () => {
         const selectedCategory = categorySelect ? categorySelect.value : 'all';
 
-        // Update Grid
-        let gridItems = blogIndex;
+        // Update Grid — exclude posts flagged hideFromGrid
+        let gridItems = blogIndex.filter(p => !p.hideFromGrid);
         if (selectedCategory !== 'all') {
             gridItems = gridItems.filter(post => post.category === selectedCategory);
         }
@@ -95,9 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Initial Render
+    // Initial Render — exclude posts flagged hideFromGrid
     if (blogGrid && blogIndex.length > 0) {
-        renderGrid(blogIndex);
+        renderGrid(blogIndex.filter(p => !p.hideFromGrid));
     }
 
     if (categorySelect && blogIndex.length > 0) {

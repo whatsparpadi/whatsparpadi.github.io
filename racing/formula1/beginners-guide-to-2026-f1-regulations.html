@@ -52,14 +52,21 @@
       "@type": "Article",
       "headline": "Beginner’s Guide to the 2026 F1 Regulations: Everything You Need to Know",
       "description": "If you’re new to F1 in 2026, this guide is for you. Everything from super-clipping to the new 50/50 power split explained simply.",
-      "image": "https://www.whatsparpadi.in/assets/images/f1_2026_regulations.jpeg",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.whatsparpadi.in/assets/images/f1_2026_regulations.jpeg",
+        "width": "1200",
+        "height": "600"
+      },
       "author": {
         "@type": "Person",
-        "name": "Pranav"
+        "name": "Pranav",
+        "sameAs": ["https://www.instagram.com/pranavp.raw/"]
       },
       "publisher": {
         "@type": "Organization",
         "name": "What's Parpadi?",
+        "sameAs": ["https://www.instagram.com/whatsparpadi/"],
         "logo": {
           "@type": "ImageObject",
           "url": "https://www.whatsparpadi.in/assets/icons/favicon.png"
@@ -103,6 +110,10 @@
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".faq-question", ".faq-answer"]
+      },
       "mainEntity": [
         {
           "@type": "Question",

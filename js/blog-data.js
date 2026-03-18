@@ -1,5 +1,26 @@
 window.blogIndexData = [
     {
+        "title": "Spider-Man: Brand New Day Release Countdown, Timeline, Trailer & Plot Updates Explained",
+        "slug": "spiderman-brand-new-day-release-date-countdown.html",
+        "category": "Upcoming Releases",
+        "path": "upcoming-releases/countdown/spiderman-brand-new-day-release-date-countdown.html",
+        "description": "Live countdown to Spider-Man: Brand New Day release date (July 31, 2026). Get the full roadmap, timeline, trailer updates, and plot details explained.",
+        "tags": [
+            "spiderman",
+            "marvel",
+            "upcoming movies",
+            "movie countdown",
+            "superhero"
+        ],
+        "date": "2026-03-18",
+        "readingTime": "3 min read",
+        "image": "assets/images/spiderman-brand-new-day.png",
+        "id": "spiderman-brand-new-day-countdown",
+        "author": "Pranav",
+        "lastUpdated": "2026-03-18",
+        "hideFromGrid": true
+    },
+    {
         "title": "Beginner’s Guide to the 2026 F1 Regulations: Everything You Need to Know",
         "slug": "beginners-guide-to-2026-f1-regulations.html",
         "description": "If you’re new to F1 in 2026, this guide is for you. Everything from super-clipping to the new 50/50 power split explained simply.",

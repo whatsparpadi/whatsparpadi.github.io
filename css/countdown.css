@@ -1,0 +1,224 @@
+/* ================================================================
+   countdown.css
+   Styles for the premium cinematic movie countdown hero component.
+   Used exclusively by: /upcoming-releases/countdown/*.html
+   Does NOT affect any other page on the site.
+   ================================================================ */
+
+/* ── Hero Section ────────────────────────────────────────────── */
+.countdown-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  /* Adapts to the site's light/dark mode via CSS variables */
+  background: var(--bg-color, #ffffff);
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+/* Background poster removed as per user request */
+
+/* Vignette overlay — adapts opacity to both modes */
+.countdown-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      var(--bg-color, #fff) 0%,
+      rgba(0, 0, 0, 0)      20%,
+      rgba(0, 0, 0, 0)      80%,
+      var(--bg-color, #fff) 100%);
+  z-index: 1;
+}
+
+/* All direct children sit above the overlays */
+.countdown-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Eyebrow text color adapts to theme */
+.countdown-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-color, #555);
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+/* Movie title adapts to theme */
+.countdown-movie-title {
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  font-size: clamp(2.8rem, 8vw, 7rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: var(--heading-color, #111);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Sub-label adapts to theme */
+.countdown-label {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.65rem, 1.8vw, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-color, #555);
+  opacity: 0.5;
+  margin-top: 36px;
+  margin-bottom: 12px;
+}
+
+/* ── Timer Row ───────────────────────────────────────────────── */
+.countdown-timer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 24px);
+  flex-wrap: nowrap;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.countdown-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(5rem, 16vw, 14rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  color: var(--heading-color, #111111);
+  transition: color 0.15s ease;
+}
+
+/* Unit labels adapt to theme */
+.countdown-unit-label {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.55rem, 1.5vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-color, #555);
+  opacity: 0.55;
+}
+
+/* Separator adapts to theme */
+.countdown-sep {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 12vw, 10rem);
+  line-height: 0.85;
+  color: var(--text-color, #555);
+  opacity: 0.25;
+  align-self: flex-start;
+  padding-top: clamp(0.3rem, 1vw, 0.6rem);
+  user-select: none;
+  animation: colonPulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes colonPulse {
+  from { opacity: 0.15; }
+  to   { opacity: 0.45; }
+}
+
+/* ── Released State (hidden until diff ≤ 0) ─────────────────── */
+.countdown-released {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.countdown-released .released-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 14vw, 11rem);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--heading-color, #111111);
+}
+
+.countdown-released .released-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Tagline adapts to theme */
+.countdown-tagline {
+  margin-top: 44px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.85rem, 2.2vw, 1.1rem);
+  font-style: italic;
+  color: var(--text-color, #555);
+  opacity: 0.5;
+  max-width: 520px;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+/* Date badge adapts to theme */
+.countdown-date-badge {
+  margin-top: 22px;
+  display: inline-block;
+  padding: 8px 22px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 40px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.7rem, 1.6vw, 0.85rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-color, #555);
+  background: var(--card-bg, rgba(0,0,0,0.03));
+}
+
+/* Divider adapts to theme */
+.countdown-divider {
+  width: clamp(80px, 15vw, 160px);
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-color, #ccc), transparent);
+  margin: 30px auto 0;
+}
+
+/* ── Article wrapper below hero ──────────────────────────────── */
+.countdown-article {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .countdown-timer { gap: 6px; }
+  .countdown-sep   { padding-top: clamp(0.2rem, 0.8vw, 0.4rem); }
+}
+
+@media (max-width: 480px) {
+  .countdown-movie-title { letter-spacing: 0.03em; }
+  .countdown-number      { font-size: clamp(3.8rem, 20vw, 6rem); }
+  .countdown-sep         { font-size: clamp(3rem, 15vw, 5rem); }
+}
+
+@media (max-width: 600px) {
+  .countdown-article { padding: 20px; }
+}
