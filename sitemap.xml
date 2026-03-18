@@ -93,4 +93,16 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.whatsparpadi.in/upcoming-releases/countdown/gta-6-release-date-countdown.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.whatsparpadi.in/upcoming-releases/countdown/spiderman-beyond-the-spiderverse-release-date-countdown.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

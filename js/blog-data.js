@@ -21,6 +21,48 @@ window.blogIndexData = [
         "hideFromGrid": true
     },
     {
+        "title": "GTA 6 (Grand Theft Auto VI) Release Countdown, Trailer & News Updates Explained",
+        "slug": "gta-6-release-date-countdown.html",
+        "category": "Upcoming Releases",
+        "path": "upcoming-releases/countdown/gta-6-release-date-countdown.html",
+        "description": "Live countdown to GTA 6 release date (November 19, 2026). Get the latest news, trailer updates, and Vice City rumors explained.",
+        "tags": [
+            "gta 6",
+            "rockstar games",
+            "upcoming games",
+            "vice city",
+            "gaming news"
+        ],
+        "date": "2026-03-18",
+        "readingTime": "3 min read",
+        "image": "assets/images/gta-6-countdown.png",
+        "id": "gta-6-countdown",
+        "author": "Pranav",
+        "lastUpdated": "2026-03-18",
+        "hideFromGrid": true
+    },
+    {
+        "title": "Spider-Man: Beyond the Spider-Verse Release Countdown, Trailer & Plot Updates",
+        "slug": "spiderman-beyond-the-spiderverse-release-date-countdown.html",
+        "category": "Upcoming Releases",
+        "path": "upcoming-releases/countdown/spiderman-beyond-the-spiderverse-release-date-countdown.html",
+        "description": "Live countdown to Spider-Man: Beyond the Spider-Verse release date. Get the latest news, casting updates, and storyline details explained.",
+        "tags": [
+            "spiderman",
+            "miles morales",
+            "spiderverse",
+            "upcoming movies",
+            "animation"
+        ],
+        "date": "2026-03-18",
+        "readingTime": "3 min read",
+        "image": "assets/images/spiderman-beyond-the-spiderverse.png",
+        "id": "spiderman-beyond-the-spiderverse-countdown",
+        "author": "Pranav",
+        "lastUpdated": "2026-03-18",
+        "hideFromGrid": true
+    },
+    {
         "title": "Beginner’s Guide to the 2026 F1 Regulations: Everything You Need to Know",
         "slug": "beginners-guide-to-2026-f1-regulations.html",
         "description": "If you’re new to F1 in 2026, this guide is for you. Everything from super-clipping to the new 50/50 power split explained simply.",
