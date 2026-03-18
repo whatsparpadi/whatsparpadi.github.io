@@ -63,6 +63,27 @@ window.blogIndexData = [
         "hideFromGrid": true
     },
     {
+        "title": "The Odyssey (2026) Release Countdown, Trailer & Plot Updates Explained",
+        "slug": "the-odyssey-release-date-countdown.html",
+        "category": "Upcoming Releases",
+        "path": "upcoming-releases/countdown/the-odyssey-release-date-countdown.html",
+        "description": "Live countdown to Christopher Nolan's The Odyssey release date (July 17, 2026). Get the latest news, casting updates, and storyline details explained.",
+        "tags": [
+            "the odyssey",
+            "christopher nolan",
+            "matt damon",
+            "tom holland",
+            "upcoming movies"
+        ],
+        "date": "2026-03-18",
+        "readingTime": "3 min read",
+        "image": "assets/images/the-odyssey-countdown.png",
+        "id": "the-odyssey-countdown",
+        "author": "Pranav",
+        "lastUpdated": "2026-03-18",
+        "hideFromGrid": true
+    },
+    {
         "title": "Beginner’s Guide to the 2026 F1 Regulations: Everything You Need to Know",
         "slug": "beginners-guide-to-2026-f1-regulations.html",
         "description": "If you’re new to F1 in 2026, this guide is for you. Everything from super-clipping to the new 50/50 power split explained simply.",
