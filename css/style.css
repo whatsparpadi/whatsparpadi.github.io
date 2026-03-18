@@ -800,6 +800,82 @@ body.dark-mode .popup-close-btn:hover {
     z-index: 1000;
 }
 
+/* Featured Countdown Banner */
+.featured-countdown {
+    margin-bottom: 40px;
+}
+
+.countdown-banner {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+body.dark-mode .countdown-banner {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    border: 1px solid var(--border-color);
+}
+
+.banner-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.banner-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner-badge {
+    background: #e1306c;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.banner-btn {
+    display: inline-block;
+    background: white;
+    color: #333;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.banner-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+    .countdown-banner {
+        padding: 30px 20px;
+    }
+    .banner-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
 .scroll-top-btn.visible {
     opacity: 1;
     visibility: visible;
