@@ -17,7 +17,7 @@ window.blogIndexData = [
         "image": "assets/images/major-releases-countdown.jpg",
         "id": "major-release-hub",
         "author": "Pranav",
-        "lastUpdated": "2026-03-18",
+        "lastUpdated": "2026-03-24",
         "hideFromGrid": false
     },
     {
@@ -235,7 +235,7 @@ window.blogIndexData = [
         "image": "assets/images/tenet_visual.png",
         "id": "tenet-breakdown",
         "author": "Pranav",
-        "lastUpdated": "2026-02-09"
+        "lastUpdated": "2026-03-24"
     },
     {
         "title": "Automate Weekly Windows Updates with Winget",
