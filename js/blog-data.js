@@ -21,6 +21,27 @@ window.blogIndexData = [
         "hideFromGrid": false
     },
     {
+        "title": "Avengers: Doomsday Release Countdown, Timeline, Trailer & Plot Updates Explained",
+        "slug": "avengers-doomsday-release-date-countdown.html",
+        "category": "Upcoming Releases",
+        "path": "upcoming-releases/countdown/avengers-doomsday-release-date-countdown.html",
+        "description": "Live countdown to Avengers: Doomsday release date (December 18, 2026). Get the full roadmap, timeline, trailer updates, and plot details explained.",
+        "tags": [
+            "avengers",
+            "marvel",
+            "upcoming movies",
+            "movie countdown",
+            "robert downey jr"
+        ],
+        "date": "2026-03-24",
+        "readingTime": "3 min read",
+        "image": "assets/images/countdown/avengers-doomsday-countdown-bg.jpg",
+        "id": "avengers-doomsday-countdown",
+        "author": "Pranav",
+        "lastUpdated": "2026-03-24",
+        "hideFromGrid": true
+    },
+    {
         "title": "Spider-Man: Brand New Day Release Countdown, Timeline, Trailer & Plot Updates Explained",
         "slug": "spiderman-brand-new-day-release-date-countdown.html",
         "category": "Upcoming Releases",
