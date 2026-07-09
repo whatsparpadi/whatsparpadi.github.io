@@ -1,5 +1,27 @@
 window.blogIndexData = [
     {
+        "title": "Amazfit Bip Max vs Amazfit Bip 6 Comparison: Which Smartwatch Wins?",
+        "slug": "amazfit-bip-max-vs-amazfit-bip-6.html",
+        "description": "A detailed side-by-side comparison of Amazfit Bip Max vs Amazfit Bip 6, detailing the 2.07 inch AMOLED display, 20-day battery life, and smart health metrics.",
+        "category": "Product Comparison",
+        "path": "product-comparison/amazfit-bip-max-vs-amazfit-bip-6.html",
+        "tags": [
+            "amazfit bip max",
+            "amazfit bip 6",
+            "smartwatch comparison",
+            "wearables",
+            "fitness tracker",
+            "zepp os",
+            "amoled display"
+        ],
+        "date": "2026-07-10",
+        "readingTime": "5 min read",
+        "image": "assets/images/amazfit-comparison.png",
+        "id": "amazfit-bip-max-vs-bip-6",
+        "author": "Pranav",
+        "lastUpdated": "2026-07-10"
+    },
+    {
         "title": "Major Upcoming Movie & Game Release Countdown Hub",
         "slug": "major-upcoming-releases-countdown.html",
         "category": "Upcoming Releases",

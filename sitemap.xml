@@ -16,6 +16,12 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://www.whatsparpadi.in/product-comparison/amazfit-bip-max-vs-amazfit-bip-6.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.whatsparpadi.in/upcoming-releases/countdown/major-upcoming-releases-countdown.html</loc>
     <lastmod>2026-03-24</lastmod>
     <changefreq>daily</changefreq>
