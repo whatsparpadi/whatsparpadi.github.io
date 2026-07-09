@@ -1,5 +1,26 @@
 window.blogIndexData = [
     {
+        "title": "Amazfit Helio Strap vs Google Fitbit Air: Which Screenless Fitness Tracker Should You Buy?",
+        "slug": "amazfit-helio-strap-vs-google-fitbit-air.html",
+        "description": "A detailed side-by-side comparison of Amazfit Helio Strap vs Google Fitbit Air, comparing their screenless designs, battery lives, health metrics, and apps.",
+        "category": "Product Comparison",
+        "path": "product-comparison/amazfit-helio-strap-vs-google-fitbit-air.html",
+        "tags": [
+            "helio strap",
+            "fitbit air",
+            "screenless tracker",
+            "smart band",
+            "fitness wearables",
+            "google health"
+        ],
+        "date": "2026-07-10",
+        "readingTime": "5 min read",
+        "image": "assets/images/amazfit-helio-strap-vs-google-fitbit-air.png",
+        "id": "amazfit-helio-strap-vs-fitbit-air",
+        "author": "Pranav",
+        "lastUpdated": "2026-07-10"
+    },
+    {
         "title": "Amazfit Bip Max vs Amazfit Active Max Comparison: Which Smartwatch Should You Buy?",
         "slug": "amazfit-bip-max-vs-amazfit-active-max.html",
         "description": "A detailed side-by-side comparison of Amazfit Bip Max vs Amazfit Active Max, detailing their AMOLED displays, 4GB onboard storage, battery life, and pricing.",

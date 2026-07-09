@@ -16,6 +16,12 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://www.whatsparpadi.in/product-comparison/amazfit-helio-strap-vs-google-fitbit-air.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.whatsparpadi.in/product-comparison/amazfit-bip-max-vs-amazfit-active-max.html</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>weekly</changefreq>
