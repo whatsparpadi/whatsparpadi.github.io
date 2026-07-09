@@ -41,6 +41,24 @@ document.addEventListener('DOMContentLoaded', () => {
         .slice(0, 3); // Take top 3
 
     if (relatedPosts.length === 0) return;
+ 
+    // Determine siteRoot dynamically if not defined
+    let siteRoot = window.SITE_ROOT;
+    if (!siteRoot) {
+        const homeLink = document.querySelector('.site-header h1 a') || document.querySelector('.back-btn');
+        if (homeLink) {
+            const href = homeLink.getAttribute('href');
+            const match = href.match(/^(.*?)index\.html/);
+            if (match) {
+                siteRoot = match[1].replace(/\/$/, '') || '.';
+            } else {
+                siteRoot = '.';
+            }
+        } else {
+            siteRoot = '.';
+        }
+    }
+    if (siteRoot.endsWith('/')) siteRoot = siteRoot.slice(0, -1);
 
     // Render Related Posts Section
     const relatedContainer = document.createElement('section');
@@ -48,15 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
     relatedContainer.style.marginTop = '60px';
     relatedContainer.style.borderTop = '1px solid var(--border-color)';
     relatedContainer.style.paddingTop = '40px';
-
+ 
     relatedContainer.innerHTML = `
         <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Read Next</h3>
         <div class="related-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1)); gap: 20px;">
             ${relatedPosts.map(post => {
-        let siteRoot = window.SITE_ROOT || '.';
-        if (siteRoot.endsWith('/')) siteRoot = siteRoot.slice(0, -1);
         const href = post.path ? `${siteRoot}/${post.path}` : post.slug;
-
+ 
         return `
                 <a href="${href}" class="related-card" style="text-decoration: none; color: inherit; display: block; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; transition: transform 0.2s;">
                     <div style="height: 160px; overflow: hidden;">

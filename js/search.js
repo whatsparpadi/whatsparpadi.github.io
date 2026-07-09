@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Determine siteRoot dynamically if not defined
+    let siteRoot = window.SITE_ROOT;
+    if (!siteRoot) {
+        const homeLink = document.querySelector('.site-header h1 a') || document.querySelector('.back-btn');
+        if (homeLink) {
+            const href = homeLink.getAttribute('href');
+            const match = href.match(/^(.*?)index\.html/);
+            if (match) {
+                siteRoot = match[1].replace(/\/$/, '') || '.';
+            } else {
+                siteRoot = '.';
+            }
+        } else {
+            siteRoot = '.';
+        }
+    }
+    if (siteRoot.endsWith('/')) siteRoot = siteRoot.slice(0, -1);
+
     const searchInput = document.getElementById('search-input');
     const resultsContainer = document.getElementById('search-results');
     let fuse;
@@ -42,8 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         items.forEach((post, index) => {
             const card = document.createElement('a');
-            let siteRoot = window.SITE_ROOT || '.';
-            if (siteRoot.endsWith('/')) siteRoot = siteRoot.slice(0, -1);
             
             if (post.path) {
                 card.href = `${siteRoot}/${post.path}`;
@@ -211,8 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (results.length > 0) {
             results.forEach((item) => {
                 const resultItem = document.createElement('a');
-                let siteRoot = window.SITE_ROOT || '.';
-                if (siteRoot.endsWith('/')) siteRoot = siteRoot.slice(0, -1);
                 
                 if (item.path) {
                     resultItem.href = `${siteRoot}/${item.path}`;
