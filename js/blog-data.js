@@ -18,7 +18,8 @@ window.blogIndexData = [
         "image": "assets/images/amazfit-helio-strap-vs-google-fitbit-air.png",
         "id": "amazfit-helio-strap-vs-fitbit-air",
         "author": "Pranav",
-        "lastUpdated": "2026-07-10"
+        "lastUpdated": "2026-07-10",
+        "hideFromGrid": true
     },
     {
         "title": "Amazfit Bip Max vs Amazfit Active Max Comparison: Which Smartwatch Should You Buy?",
@@ -40,7 +41,8 @@ window.blogIndexData = [
         "image": "assets/images/amazfit-active-max-comparison.png",
         "id": "amazfit-bip-max-vs-active-max",
         "author": "Pranav",
-        "lastUpdated": "2026-07-10"
+        "lastUpdated": "2026-07-10",
+        "hideFromGrid": true
     },
     {
         "title": "Amazfit Bip Max vs Amazfit Bip 6 Comparison: Which Smartwatch Should You Buy?",
@@ -62,7 +64,8 @@ window.blogIndexData = [
         "image": "assets/images/amazfit-comparison.png",
         "id": "amazfit-bip-max-vs-bip-6",
         "author": "Pranav",
-        "lastUpdated": "2026-07-10"
+        "lastUpdated": "2026-07-10",
+        "hideFromGrid": true
     },
     {
         "title": "Major Upcoming Movie & Game Release Countdown Hub",
