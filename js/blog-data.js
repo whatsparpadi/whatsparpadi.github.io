@@ -459,7 +459,7 @@ window.blogIndexData = [
         ],
         "date": "2026-01-29",
         "readingTime": "2 min read",
-        "image": "assets/images/gaming_giveaways.jpeg",
+        "image": "assets/images/gaming_giveaways.png",
         "id": "game-giveaways",
         "author": "Pranav",
         "lastUpdated": "2026-01-29"
