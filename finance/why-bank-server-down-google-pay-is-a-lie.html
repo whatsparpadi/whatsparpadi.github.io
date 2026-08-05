@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why "Bank Server Down" on Google Pay Is Often a Lie (And How to Pay Anyway) - What's Parpadi?</title>
+    <meta name="description"
+        content="Ever stuck at checkout with Google Pay saying 'Bank Server Down'? Learn why your bank isn't actually down, how TPAP vs PSP routing works, and the 10-second fix.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Why 'Bank Server Down' on Google Pay Is Often a Lie (And How to Pay Anyway)">
+    <meta property="og:description"
+        content="Ever stuck at checkout with Google Pay saying 'Bank Server Down'? Learn why your bank isn't actually down, how TPAP vs PSP routing works, and the 10-second fix.">
+    <meta property="og:image" content="https://www.whatsparpadi.in/assets/images/google_pay_bank_server_down.png">
+    <meta property="og:url" content="https://www.whatsparpadi.in/finance/why-bank-server-down-google-pay-is-a-lie.html">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Why 'Bank Server Down' on Google Pay Is Often a Lie (And How to Pay Anyway)">
+    <meta name="twitter:description"
+        content="Ever stuck at checkout with Google Pay saying 'Bank Server Down'? Learn why your bank isn't actually down, how TPAP vs PSP routing works, and the 10-second fix.">
+    <meta name="twitter:image" content="https://www.whatsparpadi.in/assets/images/google_pay_bank_server_down.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/icons/favicon.png">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Scripts -->
+    <script src="../js/main.js" defer></script>
+    <script src="../js/darkmode.js" defer></script>
+    <script src="../js/scroll-top.js" defer></script>
+    <script src="../js/reading-time.js" defer></script>
+    <script src="../js/blog-data.js" defer></script>
+    <script src="../js/related-posts.js" defer></script>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.whatsparpadi.in/finance/why-bank-server-down-google-pay-is-a-lie.html">
+
+    <!-- Schema.org JSON-LD (Entity Mapping SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Why 'Bank Server Down' on Google Pay Is Often a Lie (And How to Pay Anyway)",
+      "description": "An in-depth technical explanation of why Google Pay flags bank servers as down when they are operational, how TPAP vs PSP gateways route UPI transactions, and how Jupiter or native bank apps bypass network congestion.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.whatsparpadi.in/assets/images/google_pay_bank_server_down.png",
+        "width": "1200",
+        "height": "675"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Pranav",
+        "sameAs": ["https://www.instagram.com/pranavp.raw/"]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "What's Parpadi?",
+        "sameAs": ["https://www.instagram.com/whatsparpadi/"],
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.whatsparpadi.in/assets/icons/favicon.png"
+        }
+      },
+      "datePublished": "2026-08-06",
+      "dateModified": "2026-08-06"
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.whatsparpadi.in/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Finance",
+        "item": "https://www.whatsparpadi.in/index.html?category=Finance"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Why Bank Server Down on Google Pay Is Often a Lie"
+      }]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does Google Pay say 'Bank Server Down' when my bank app works?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google Pay is a Third-Party Application Provider (TPAP) that routes transactions through specific PSP partner bank servers. If congestion or latency occurs between Google Pay's specific PSP bridge and your bank, GPay triggers a circuit breaker error even if your bank's direct servers are online."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Jupiter UPI work when Google Pay shows bank server down?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Jupiter UPI can continue working because Jupiter uses a dedicated, direct technical pipeline with Federal Bank and its partner PSP stack (e.g., @jupiteraxis), completely bypassing Google Pay's intermediary partner servers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a TPAP and a PSP in UPI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TPAPs (like Google Pay, PhonePe) do not hold banking licenses and build on top of partner banks. PSPs (Payment Service Providers) are direct banking institutions connected to the NPCI switch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if UPI payments fail at checkout counter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keep the merchant's QR code scanned, open your bank's native app (or Jupiter, BHIM, YONO, iMobile), enter your standard UPI PIN, and authorize the payment. The underlying UPI PIN is tied to your account, not to Google Pay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is a bank server TRULY down across all apps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A bank is truly down during scheduled Core Banking System (CBS) maintenance (typically 1:00 AM to 3:00 AM) or a global NPCI core switch outage. In those cases, payments will fail across all apps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does UPI Lite help during bank server downtime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UPI Lite stores up to ₹2,000 as on-device wallet funds and processes small transactions instantly without querying core banking database servers."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J4CX2MQPEX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-J4CX2MQPEX');
+    </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="https://www.instagram.com/whatsparpadi/" target="_blank" class="instagram-btn"
+            aria-label="Instagram Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">☀️</button>
+        <h1><a href="../index.html" style="text-decoration:none; color:inherit;">what's parpadi?</a></h1>
+        <p>suggestions for real-life decisions</p>
+    </header>
+
+    <main class="container">
+        <a href="../index.html" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Home
+        </a>
+
+        <article class="blog-post">
+            <div class="post-header">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a> &gt; <a href="../index.html?category=Finance">Finance</a> &gt;
+                    Why "Bank Server Down" on Google Pay Is Often a Lie
+                </div>
+                <h1>Why "Bank Server Down" on Google Pay Is Often a Lie (And How to Pay Anyway)</h1>
+                <p class="post-date"><a href="../about.html">By Pranav</a> • Published on: 06 Aug 2026 • Last
+                    Updated: 06 Aug 2026 • <a href="../index.html?category=Finance" class="category-link">Finance</a> •
+                    <span class="reading-time">5 min read</span>
+                </p>
+            </div>
+
+            <img src="../assets/images/google_pay_bank_server_down.png"
+                alt="Google Pay Bank Server Down Technical Explanation" class="post-hero-image"
+                onerror="this.style.display='none'">
+
+            <div class="post-body markdown-content">
+
+                <details class="topics-discussed"
+                    style="background: var(--card-bg); padding: 15px 20px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 2em;">
+                    <summary style="font-size: 1.5rem; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Topics
+                        Discussed</summary>
+                    <ul style="margin-bottom: 0; padding-top: 10px;">
+                        <li><a href="#introduction">Introduction - The Checkout Panic</a></li>
+                        <li><a href="#middleman-problem">1. The Middleman Problem: TPAPs vs. PSPs</a></li>
+                        <li><a href="#circuit-breakers">2. Automated Safety Flags & Circuit Breakers</a></li>
+                        <li><a href="#why-jupiter-works">3. Why Your Bank App (or Jupiter) Still Works</a></li>
+                        <li><a href="#emergency-fix">4. What to Do in an Emergency (The 10-Second Fix)</a></li>
+                        <li><a href="#truly-down">5. When Is the Bank TRULY Down?</a></li>
+                        <li><a href="#zero-downtime">6. Pro-Tip for Zero-Downtime: UPI Lite</a></li>
+                        <li><a href="#takeaway">The Takeaway</a></li>
+                        <li><a href="#faq">Frequently Asked Questions</a></li>
+                    </ul>
+                </details>
+
+                <h2 id="introduction">Introduction - The Checkout Panic</h2>
+                <p>Standing at a petrol pump with cars honking impatiently behind you, or at a grocery checkout with a
+                    growing queue, is the absolute worst time to see an error like:
+                    <strong>"Bank Server
+                        Down."</strong>
+                </p>
+
+                <p>You check your balance, wonder if your account has been temporarily locked, or start digging
+                    through your pockets for physical cash.</p>
+
+                <p>Here is what most people don't realize: <strong>In many cases, your bank server isn't down at all.
+                        Google Pay's specific route to your bank is just broken.</strong></p>
+
+                <p>If you switch from Google Pay to your bank’s native app or a direct neo-banking app (like
+                    <strong>Jupiter</strong>, iMobile, YONO, or BHIM), your payment will often process successfully in
+                    seconds. Here is the exact technical architecture explaining why this happens, and how to keep
+                    yourself from getting stranded at the counter.
+                </p>
+
+                <h2 id="middleman-problem">1. The Middleman Problem: TPAPs vs. PSPs</h2>
+                <p>To understand why Google Pay fails while your direct banking apps continue to work, you need to
+                    examine how the National Payments Corporation of India (NPCI) constructed the multi-tiered Unified
+                    Payments Interface (UPI) ecosystem.</p>
+
+                <p>UPI operates with two distinct primary types of applications:</p>
+                <ul>
+                    <li><strong>TPAPs (Third-Party Application Providers):</strong> Apps like Google Pay, PhonePe, and
+                        Paytm do not hold full banking licenses. They sit as front-end software interfaces built <em>on
+                            top</em> of traditional partner banks.</li>
+                    <li><strong>PSP Banks (Payment Service Providers):</strong> Partner banks like Axis Bank, ICICI
+                        Bank, HDFC Bank, or Federal Bank that maintain direct API connections into the central NPCI
+                        switch network.</li>
+                </ul>
+
+                <div
+                    style="background: var(--card-bg); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); font-family: monospace; font-size: 0.9rem; overflow-x: auto; margin: 1.5em 0;">
+                    [ Your Phone ] ──&gt; [ Google Pay ] ──&gt; [ Partner PSP Gateway ] ──&gt; [ NPCI ] ──&gt; [ Federal
+                    Bank / Your Bank ]<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Congestion
+                    Here = "Server Down")
+                </div>
+
+                <p>When you initiate a payment using Google Pay, your transaction does not travel straight from your
+                    phone to your destination bank account. Instead, it routes through Google Pay's partner PSP bank
+                    servers first (indicated by handles such as <code>@okaxis</code>, <code>@okhdfcbank</code>, or
+                    <code>@okicici</code>).
+                </p>
+
+                <p>If the connection bridge between <strong>Google Pay's specific partner PSP gateway and your
+                        bank</strong> suffers high latency, traffic spikes, or a micro-outage, Google Pay loses
+                    communication with your bank's host. Rather than allowing your funds to become locked in a stressful
+                    "Pending" state, Google Pay triggers an automated fallback notice displaying: <em>"Bank Server
+                        Down."</em></p>
+
+                <h2 id="circuit-breakers">2. Automated Safety Flags & Circuit Breakers</h2>
+                <p>Google Pay continuously monitors real-time transaction success rates across all bank handles. If
+                    failure rates spike on GPay's side for a specific bank (such as Federal Bank, SBI, or HDFC):</p>
+
+                <ul>
+                    <li>Google Pay automatically deploys a <strong>circuit breaker algorithm</strong>.</li>
+                    <li>It proactively blocks new payment attempts for that bank handle.</li>
+                    <li>It flags the bank as unreachable to shield users from having money debited without immediate
+                        confirmation.</li>
+                </ul>
+
+                <p>Meanwhile, alternative transaction pathways that haven't hit that strict failure rate threshold
+                    remain completely open and operational.</p>
+
+                <h2 id="why-jupiter-works">3. Why Your Bank App (or Jupiter) Still Works</h2>
+                <p>When you open your bank's native application, or a direct digital banking platform like
+                    <strong>Jupiter</strong> (which operates directly via Federal Bank), you bypass Google Pay’s
+                    middleman servers entirely.
+                </p>
+
+                <div
+                    style="background: var(--card-bg); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); font-family: monospace; font-size: 0.9rem; overflow-x: auto; margin: 1.5em 0;">
+                    [ Your Phone ] ──&gt; [ Jupiter / Bank App ] ──&gt; [ Direct Federal Bank PSP ] ──&gt; [ NPCI ]<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Direct
+                    Pipeline = Success)
+                </div>
+
+                <p>Here is why Jupiter UPI and native bank apps succeed where Google Pay fails:</p>
+                <ol>
+                    <li><strong>Dedicated Infrastructure Pipelines:</strong> Native banking apps utilize direct,
+                        dedicated API gateways straight into the bank's internal Core Banking System (CBS).</li>
+                    <li><strong>Different PSP Gateway Routing:</strong> Jupiter uses its dedicated UPI integration
+                        directly aligned with Federal Bank and its partner PSP stack (e.g., <code>@jupiteraxis</code>).
+                        It does not depend on Google's heavy intermediary handles.</li>
+                    <li><strong>Traffic Isolation:</strong> Even if Google Pay's partner servers are choked under
+                        millions of nationwide peak-hour API requests, your bank's native pipeline remains uncluttered
+                        and responsive.</li>
+                </ol>
+
+                <h2 id="emergency-fix">4. What to Do in an Emergency (The 10-Second Fix)</h2>
+                <p>The next time Google Pay or PhonePe throws a "Bank Server Down" error at a billing counter,
+                    <strong>do not panic, change payment methods unnecessarily, or step out of line.</strong> Follow
+                    this 3-step checklist:
+                </p>
+
+                <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse: collapse; margin-bottom: 20px;">
+                        <thead>
+                            <tr
+                                style="background-color: var(--card-bg); border-bottom: 2px solid var(--border-color); text-align: left;">
+                                <th style="padding: 12px; border: 1px solid var(--border-color);">Step</th>
+                                <th style="padding: 12px; border: 1px solid var(--border-color);">Action</th>
+                                <th style="padding: 12px; border: 1px solid var(--border-color);">Why It Works</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 12px; border: 1px solid var(--border-color); font-weight: bold;">1.
+                                    Stay on screen</td>
+                                <td style="padding: 12px; border: 1px solid var(--border-color);">Keep the merchant's QR
+                                    code visible or scan it directly inside your backup app.</td>
+                                <td style="padding: 12px; border: 1px solid var(--border-color);">Avoids asking the
+                                    merchant to re-generate or re-print a dynamic QR code.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 12px; border: 1px solid var(--border-color); font-weight: bold;">2.
+                                    Open Native App</td>
+                                <td style="padding: 12px; border: 1px solid var(--border-color);">Launch your bank's app
+                                    (e.g., Jupiter, BHIM, YONO, iMobile, Axis Mobile).</td>
+                                <td style="padding: 12px; border: 1px solid var(--border-color);">Bypasses third-party
+                                    app server congestion entirely.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 12px; border: 1px solid var(--border-color); font-weight: bold;">3.
+                                    Authorize Payment</td>
+                                <td style="padding: 12px; border: 1px solid var(--border-color);">Enter the exact same
+                                    4-digit or 6-digit UPI PIN.</td>
+                                <td style="padding: 12px; border: 1px solid var(--border-color);">The underlying UPI PIN
+                                    is encrypted and tied directly to your bank account, not to Google Pay.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 id="truly-down">5. When Is the Bank TRULY Down?</h2>
+                <p>Switching from Google Pay to Jupiter or a native bank app resolves transaction failures approximately
+                    <strong>80% of the time</strong>. However, there are two specific scenario types where <strong>no
+                        UPI application will work</strong>:
+                </p>
+
+                <ul>
+                    <li><strong>Core Banking System (CBS) Outages:</strong> If your bank's backend database undergoes
+                        scheduled night-time maintenance (typically between 1:00 AM and 3:00 AM) or suffers a complete
+                        infrastructure failure, payments will fail across <em>all</em> apps (Jupiter, GPay, PhonePe, and
+                        Paytm alike) because your core account balance cannot be debited.</li>
+                    <li><strong>NPCI Core Network Downtime:</strong> If the central NPCI switch experiences a nationwide
+                        switch breakdown, the overall UPI network across India pauses.</li>
+                </ul>
+
+                <h2 id="zero-downtime">6. Pro-Tip for Zero-Downtime: UPI Lite</h2>
+                <p>To guarantee payments clear even during full bank maintenance windows, enable <strong>UPI
+                        Lite</strong> inside your preferred payment app.</p>
+
+                <p>UPI Lite maintains an on-device wallet balance (up to ₹2,000) for small-ticket daily transactions.
+                    Because UPI Lite transactions clear locally without sending real-time query calls to core banking
+                    servers, payments clear instantly with near 100% reliability.</p>
+
+                <h2 id="takeaway">The Takeaway</h2>
+                <p>Google Pay and PhonePe are convenient aggregators, but relying on any single third-party app as your
+                    sole point of payment failure is a major operational vulnerability.</p>
+
+                <p>Keep your bank's native app or Jupiter setup, logged in, and accessible on your smartphone's home
+                    screen. The next time Google Pay claims your "Bank Server is Down," launch Jupiter or your native
+                    bank app, scan the code, and complete your purchase hassle-free.</p>
+
+                <h2 id="faq">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Why does Google Pay say 'Bank Server Down' when my bank app works?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Google Pay is a Third-Party Application Provider (TPAP) that routes transactions
+                                    through specific PSP partner bank servers. If congestion or latency occurs between
+                                    Google Pay's specific PSP bridge and your bank, GPay triggers a circuit breaker
+                                    error even if your bank's direct servers are online.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can Jupiter UPI work when Google Pay shows bank server down?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes, Jupiter UPI can continue working because Jupiter uses a dedicated, direct
+                                    technical pipeline with Federal Bank and its partner PSP stack (e.g., @jupiteraxis),
+                                    completely bypassing Google Pay's intermediary partner servers.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What is the difference between a TPAP and a PSP in UPI?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>TPAPs (like Google Pay, PhonePe) do not hold banking licenses and build on top of
+                                    partner banks. PSPs (Payment Service Providers) are direct banking institutions
+                                    connected to the NPCI switch.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What should I do if UPI payments fail at checkout counter?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Keep the merchant's QR code scanned, open your bank's native app (or Jupiter, BHIM,
+                                    YONO, iMobile), enter your standard UPI PIN, and authorize the payment. The
+                                    underlying UPI PIN is tied to your account, not to Google Pay.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            When is a bank server TRULY down across all apps?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>A bank is truly down during scheduled Core Banking System (CBS) maintenance
+                                    (typically 1:00 AM to 3:00 AM) or a global NPCI core switch outage. In those cases,
+                                    payments will fail across all apps.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How does UPI Lite help during bank server downtime?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>UPI Lite stores up to ₹2,000 as on-device wallet funds and processes small
+                                    transactions instantly without querying core banking database servers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-tags">
+                    <strong>Tags:</strong>
+                    <a href="../index.html?search=google%20pay" class="tag-link">google pay</a>
+                    <a href="../index.html?search=upi" class="tag-link">upi</a>
+                    <a href="../index.html?search=jupiter%20upi" class="tag-link">jupiter upi</a>
+                    <a href="../index.html?search=bank%20server%20down" class="tag-link">bank server down</a>
+                    <a href="../index.html?search=fintech" class="tag-link">fintech</a>
+                    <a href="../index.html?search=npci" class="tag-link">npci</a>
+                    <a href="../index.html?search=upi%20lite" class="tag-link">upi lite</a>
+                    <a href="../index.html?search=payments" class="tag-link">payments</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Scroll to Top Button -->
+        <button id="scroll-top-btn" class="scroll-top-btn hidden" aria-label="Scroll to Top">↑ Top</button>
+    </main>
+
+    <footer class="site-footer">
+        <p>Created and managed by <a href="../about.html">Pranav</a></p>
+    </footer>
+</body>
+
+</html>

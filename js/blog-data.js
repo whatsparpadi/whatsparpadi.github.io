@@ -1,5 +1,28 @@
 window.blogIndexData = [
     {
+        "title": "Why \"Bank Server Down\" on Google Pay Is Often a Lie (And How to Pay Anyway)",
+        "slug": "why-bank-server-down-google-pay-is-a-lie.html",
+        "description": "Ever stuck at checkout with Google Pay saying 'Bank Server Down'? Learn why your bank isn't actually down, how TPAP vs PSP routing works, and the 10-second fix.",
+        "category": "Finance",
+        "path": "finance/why-bank-server-down-google-pay-is-a-lie.html",
+        "tags": [
+            "google pay",
+            "upi",
+            "jupiter upi",
+            "bank server down",
+            "fintech",
+            "npci",
+            "upi lite",
+            "payments"
+        ],
+        "date": "2026-08-06",
+        "readingTime": "5 min read",
+        "image": "assets/images/google_pay_bank_server_down.png",
+        "id": "why-bank-server-down-google-pay-is-a-lie",
+        "author": "Pranav",
+        "lastUpdated": "2026-08-06"
+    },
+    {
         "title": "Amazfit Helio Strap vs Google Fitbit Air: Which Screenless Fitness Tracker Should You Buy?",
         "slug": "amazfit-helio-strap-vs-google-fitbit-air.html",
         "description": "A detailed side-by-side comparison of Amazfit Helio Strap vs Google Fitbit Air, comparing their screenless designs, battery lives, health metrics, and apps.",
