@@ -123,7 +123,8 @@ body {
     margin-bottom: 40px;
     margin-top: 20px;
     position: relative;
-    /* For absolute positioning of toggle */
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .site-header h1 {
@@ -146,6 +147,10 @@ body {
     padding: 5px;
     border-radius: 50%;
     line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
 }
 
 
@@ -157,9 +162,6 @@ body {
 
 
 .site-header p {
-    color: #666;
-    /* Note: Should use a variable like --text-muted or inherit opacity */
-    font-size: 1.1rem;
     color: var(--text-color);
     opacity: 0.8;
     font-size: 1.1rem;
@@ -420,37 +422,26 @@ body.dark-mode .filter-btn.active {
 }
 
 
-/* Header Left Action Buttons (Instagram & Crypto Symbol) */
-.header-left-actions {
+/* Instagram Button (Top Left Corner) */
+.instagram-btn {
     position: absolute;
     top: 20px;
     left: 20px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    z-index: 10;
-}
-
-.instagram-btn,
-.crypto-nav-btn {
-    position: static;
     color: var(--heading-color);
     transition: transform 0.3s ease, color 0.3s ease;
     padding: 5px;
     line-height: 1;
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
+    z-index: 10;
 }
 
 .instagram-btn:hover {
     transform: rotate(-10deg) scale(1.1);
     color: #E1306C;
     /* Instagram Brand Color */
-}
-
-.crypto-nav-btn:hover {
-    transform: rotate(10deg) scale(1.15);
-    color: #f59e0b;
 }
 
 
@@ -907,47 +898,28 @@ body.dark-mode .scroll-top-btn {
     color: #000;
 }
 
-/* Mobile Header Fix */
+/* Responsive Header Styles (768px) */
 @media (max-width: 768px) {
     .site-header {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .instagram-btn,
-    .theme-btn {
-        position: static;
-        /* Reset absolute positioning */
-        transform: none;
-        margin: 0;
+        margin-top: 15px;
+        margin-bottom: 25px;
+        padding-left: 50px;
+        padding-right: 50px;
     }
 
     .site-header h1 {
-        width: 100%;
-        /* Force new line */
-        order: 1;
-        /* Move below buttons */
-        margin-top: 10px;
-        font-size: 2rem;
-        /* Smaller font */
+        font-size: 1.8rem;
     }
 
-    .site-header p {
-        width: 100%;
-        order: 2;
+    .instagram-btn {
+        top: 15px;
+        left: 15px;
     }
 
-    .category-nav {
-        width: 100%;
-        order: 3;
+    .theme-btn {
+        top: 15px;
+        right: 15px;
     }
-
-    /* Adjust hover to not rotate/move too much to avoid layout shift if needed, 
-       but keeping scale is fine usually unless it causes overflow. */
 }
 
 /* Search Feature */
@@ -1504,22 +1476,36 @@ body.dark-mode .timeline-date {
 }
 
 /* ── Mobile & Tablet Responsive Media Queries ── */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .site-header {
-        margin-top: 55px;
-        margin-bottom: 25px;
+        margin-top: 12px;
+        margin-bottom: 20px;
+        padding-left: 45px;
+        padding-right: 45px;
     }
+
     .site-header h1 {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         word-break: break-word;
     }
-    .header-left-actions {
-        top: 15px;
-        left: 15px;
-        gap: 4px;
+
+    .site-header p {
+        font-size: 0.95rem;
     }
+
+    .instagram-btn {
+        top: 12px;
+        left: 10px;
+    }
+
     .theme-btn {
-        top: 15px;
-        right: 15px;
+        top: 12px;
+        right: 10px;
+        font-size: 1.3rem;
+    }
+
+    .instagram-btn svg {
+        width: 22px;
+        height: 22px;
     }
 }
