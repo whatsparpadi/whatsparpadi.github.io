@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (lastPart.endsWith('.html')) {
                 lastPart = pathParts.length > 1 ? pathParts[pathParts.length - 2] : '';
             }
-            if (['tech', 'movies', 'gaming', 'productivity', 'education', 'upcoming-projects', 'finance', 'marketing', 'racing', 'product-comparison', 'upcoming-releases'].includes(lastPart.toLowerCase())) {
+            if (['tech', 'movies', 'gaming', 'productivity', 'education', 'upcoming-projects', 'finance', 'marketing', 'racing', 'product-comparison', 'upcoming-releases', 'crypto-alerts'].includes(lastPart.toLowerCase())) {
                 categoryParam = lastPart.toLowerCase();
             }
         }

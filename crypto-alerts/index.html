@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Alerts Feed - What's Parpadi?</title>
+    <meta name="description"
+        content="Live Twitter-style crypto alerts feed featuring TradingView charts, Binance perpetual futures, and real-time tracking for coins like BLUAIUSDT.P.">
+
+    <link rel="canonical" href="https://www.whatsparpadi.in/crypto-alerts/">
+
+    <!-- Social Sharing Meta Tags -->
+    <meta property="og:title" content="Crypto Alerts Feed - What's Parpadi?">
+    <meta property="og:description"
+        content="Real-time TradingView chart tracking feed for crypto perpetual futures including BLUAIUSDT.P on Binance.">
+    <meta property="og:image" content="https://www.whatsparpadi.in/assets/images/crypto_bluai.png">
+    <meta property="og:url" content="https://www.whatsparpadi.in/crypto-alerts/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Crypto Alerts Feed - What's Parpadi?">
+    <meta name="twitter:description"
+        content="Real-time TradingView chart tracking feed for crypto perpetual futures.">
+    <meta name="twitter:image" content="https://www.whatsparpadi.in/assets/images/crypto_bluai.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/icons/favicon.png">
+
+    <!-- Performance: Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Custom Styling for Twitter-style Crypto Feed -->
+    <style>
+        .crypto-feed-container {
+            max-width: 850px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .crypto-feed-post {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .crypto-feed-post:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feed-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+            flex-shrink: 0;
+        }
+
+        .header-meta {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .coin-title-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .coin-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--heading-color);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .exchange-badge {
+            background: rgba(59, 130, 246, 0.15);
+            color: #3b82f6;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        body.dark-mode .exchange-badge {
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+        }
+
+        .trade-type-badge {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        body.dark-mode .trade-type-badge {
+            background: rgba(248, 113, 113, 0.2);
+            color: #f87171;
+        }
+
+        .post-subtext {
+            font-size: 0.85rem;
+            opacity: 0.75;
+            color: var(--text-color);
+            margin-top: 4px;
+        }
+
+        .pulse-status {
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        /* Chart container placed immediately after coin name */
+        .feed-chart-wrapper {
+            width: 100%;
+            margin-top: 16px;
+            margin-bottom: 20px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+        }
+
+        .feed-chart-container {
+            width: 100%;
+            height: 550px;
+        }
+
+        @media (max-width: 768px) {
+            .feed-chart-container {
+                height: 420px;
+            }
+        }
+
+        .feed-description {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .feed-description p {
+            margin-bottom: 12px;
+        }
+
+        .feed-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .feed-tag {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.08);
+            padding: 4px 10px;
+            border-radius: 14px;
+        }
+
+        body.dark-mode .feed-tag {
+            color: #60a5fa;
+            background: rgba(96, 165, 250, 0.15);
+        }
+
+        .read-full-post-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--heading-color);
+            color: var(--bg-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        body.dark-mode .read-full-post-btn {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .read-full-post-btn:hover {
+            opacity: 0.9;
+            transform: translateX(3px);
+        }
+
+        .crypto-hub-banner {
+            max-width: 850px;
+            margin: 0 auto 30px auto;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95)), url('../assets/images/crypto_bluai.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            padding: 30px;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .crypto-hub-banner h2 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .crypto-hub-banner p {
+            font-size: 1rem;
+            opacity: 0.9;
+            color: #cbd5e1;
+            margin-bottom: 0;
+        }
+
+        /* Responsive Breakpoints for Feed */
+        @media (max-width: 600px) {
+            .crypto-feed-post {
+                padding: 16px;
+                border-radius: 16px;
+            }
+            .crypto-hub-banner {
+                padding: 20px 16px;
+                border-radius: 16px;
+            }
+            .crypto-hub-banner h2 {
+                font-size: 1.4rem;
+            }
+            .coin-name {
+                font-size: 1.15rem;
+            }
+            .feed-actions-row {
+                flex-direction: column;
+                align-items: stretch !important;
+            }
+            .feed-actions-row > div:last-child {
+                width: 100%;
+                justify-content: stretch;
+            }
+            .feed-actions-row button,
+            .feed-actions-row a.read-full-post-btn {
+                flex: 1;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <!-- Page Scripts -->
+    <script>window.SITE_ROOT = '..';</script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/darkmode.js" defer></script>
+    <script src="../js/scroll-top.js" defer></script>
+    <script src="../js/reading-time.js" defer></script>
+    <script src="../js/blog-data.js" defer></script>
+    <script src="../js/crypto-config.js" defer></script>
+    <script src="https://s3.tradingview.com/tv.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J4CX2MQPEX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-J4CX2MQPEX');
+    </script>
+</head>
+
+<body>
+
+    <main class="container">
+        <header class="site-header">
+            <a href="https://www.instagram.com/whatsparpadi/" target="_blank" class="instagram-btn"
+                aria-label="Instagram Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <a href="index.html" class="crypto-nav-btn" aria-label="Crypto Alerts Feed" title="Crypto Alerts Feed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11.767 19.089c4.98 0 9.018-4.038 9.018-9.018 0-4.98-4.038-9.018-9.018-9.018-4.98 0-9.018 4.038-9.018 9.018 0 4.98 4.038 9.018 9.018 9.018z"></path>
+                    <path d="M9.5 7.5h3a2 2 0 0 1 0 4H9.5v-4zm0 4h3.5a2 2 0 0 1 0 4H9.5v-4z"></path>
+                    <path d="M11 6v1.5m0 8V17m2-11v1.5m0 8V17"></path>
+                </svg>
+            </a>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">☀️</button>
+            <h1><a href="../index.html" style="text-decoration:none; color:inherit;">what's parpadi?</a></h1>
+            <p>suggestions for real-life decisions</p>
+        </header>
+
+        <div style="max-width: 850px; margin: 0 auto 20px auto;">
+            <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+        </div>
+
+        <!-- Crypto Hub Banner -->
+        <section class="crypto-hub-banner">
+            <h2>Crypto Alerts Feed ⚡</h2>
+            <p>Live TradingView tracking feed for crypto coins and perpetual futures. Listed top-to-bottom with live interactive charts.</p>
+        </section>
+
+        <!-- Vertical Twitter-style Feed Container -->
+        <div id="crypto-feed-container" class="crypto-feed-container">
+            <!-- Feed posts dynamically rendered by crypto-config.js -->
+        </div>
+
+        <button id="scroll-top-btn" class="scroll-top-btn hidden" aria-label="Scroll to Top">↑ Top</button>
+    </main>
+
+    <footer class="site-footer">
+        <p>Created and managed by <a href="../about.html">Pranav</a></p>
+    </footer>
+
+    <!-- Initialize Feed and Theme Listener -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.CRYPTO_CONFIG) {
+                window.CRYPTO_CONFIG.renderFeed('crypto-feed-container');
+                window.CRYPTO_CONFIG.initThemeSync('crypto-feed-container');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

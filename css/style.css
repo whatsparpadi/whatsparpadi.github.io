@@ -438,6 +438,24 @@ body.dark-mode .filter-btn.active {
     /* Instagram Brand Color */
 }
 
+/* Crypto Header Button */
+.crypto-nav-btn {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    color: var(--heading-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 5px;
+    line-height: 1;
+    display: inline-flex;
+    text-decoration: none;
+}
+
+.crypto-nav-btn:hover {
+    transform: rotate(10deg) scale(1.15);
+    color: #f59e0b;
+}
+
 
 
 /* Markdown Styles */
@@ -1486,4 +1504,28 @@ body.dark-mode .timeline-date {
     line-height: 1.6;
     color: var(--text-color);
     opacity: 0.9;
+}
+
+/* ── Mobile & Tablet Responsive Media Queries ── */
+@media (max-width: 600px) {
+    .site-header {
+        margin-top: 55px;
+        margin-bottom: 25px;
+    }
+    .site-header h1 {
+        font-size: 1.8rem;
+        word-break: break-word;
+    }
+    .instagram-btn {
+        top: 15px;
+        left: 15px;
+    }
+    .crypto-nav-btn {
+        top: 15px;
+        left: 52px;
+    }
+    .theme-btn {
+        top: 15px;
+        right: 15px;
+    }
 }

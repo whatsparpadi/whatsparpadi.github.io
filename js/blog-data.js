@@ -1,5 +1,28 @@
 window.blogIndexData = [
     {
+        "title": "BLUAIUSDT.P Binance Perpetual Futures Live Tracking & Chart",
+        "slug": "bluaiusdt-p.html",
+        "description": "Short idea on BLUAI / USDT Binance Perpetual Futures. RSI bearish divergence happening in lower timeframe.",
+        "category": "Crypto Alerts",
+        "path": "crypto-alerts/bluaiusdt-p.html",
+        "tags": [
+            "bluai",
+            "short idea",
+            "binance",
+            "perpetual futures",
+            "crypto alerts",
+            "tradingview",
+            "live chart"
+        ],
+        "date": "2026-08-08",
+        "readingTime": "Live Chart",
+        "image": "assets/images/crypto_bluai.png",
+        "id": "bluaiusdt-p-binance",
+        "author": "Pranav",
+        "lastUpdated": "2026-08-08",
+        "hideFromGrid": true
+    },
+    {
         "title": "Why \"Bank Server Down\" on Google Pay Is Often a Lie (And How to Pay Anyway)",
         "slug": "why-bank-server-down-google-pay-is-a-lie.html",
         "description": "Ever stuck at checkout with Google Pay saying 'Bank Server Down'? Learn why your bank isn't actually down, how TPAP vs PSP routing works, and the 10-second fix.",
