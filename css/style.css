@@ -420,35 +420,32 @@ body.dark-mode .filter-btn.active {
 }
 
 
-/* Instagram Button */
-.instagram-btn {
+/* Header Left Action Buttons (Instagram & Crypto Symbol) */
+.header-left-actions {
     position: absolute;
     top: 20px;
     left: 20px;
-    color: var(--heading-color);
-    transition: transform 0.3s ease;
-    padding: 5px;
-    line-height: 1;
-    display: inline-flex;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 10;
 }
 
-.instagram-btn:hover {
-    transform: rotate(-10deg) scale(1.1);
-    color: #E1306C;
-    /* Instagram Brand Color */
-}
-
-/* Crypto Header Button */
+.instagram-btn,
 .crypto-nav-btn {
-    position: absolute;
-    top: 20px;
-    left: 60px;
+    position: static;
     color: var(--heading-color);
     transition: transform 0.3s ease, color 0.3s ease;
     padding: 5px;
     line-height: 1;
     display: inline-flex;
     text-decoration: none;
+}
+
+.instagram-btn:hover {
+    transform: rotate(-10deg) scale(1.1);
+    color: #E1306C;
+    /* Instagram Brand Color */
 }
 
 .crypto-nav-btn:hover {
@@ -1516,13 +1513,10 @@ body.dark-mode .timeline-date {
         font-size: 1.8rem;
         word-break: break-word;
     }
-    .instagram-btn {
+    .header-left-actions {
         top: 15px;
         left: 15px;
-    }
-    .crypto-nav-btn {
-        top: 15px;
-        left: 52px;
+        gap: 4px;
     }
     .theme-btn {
         top: 15px;
