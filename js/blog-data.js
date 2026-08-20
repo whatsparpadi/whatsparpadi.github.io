@@ -1,5 +1,29 @@
 window.blogIndexData = [
     {
+        "title": "Google Spam Updates Explained: Complete Tracker, Targets & Recovery Guide",
+        "slug": "google-spam-updates-explained.html",
+        "description": "The ultimate tracker & guide to Google Spam Updates. Understand SpamBrain, recent updates (including August 2026), what gets targeted, and step-by-step recovery strategies.",
+        "category": "Tech",
+        "path": "tech/google-spam-updates-explained.html",
+        "tags": [
+            "google spam update 2026",
+            "google august spam update",
+            "august 2026 spam update",
+            "google august 2026 spam update",
+            "google spam updates",
+            "google spam update tracker",
+            "spambrain",
+            "scaled content abuse",
+            "seo"
+        ],
+        "date": "2026-08-20",
+        "readingTime": "6 min read",
+        "image": "assets/images/google_spam_updates_explained.png",
+        "id": "google-spam-updates-explained",
+        "author": "Pranav",
+        "lastUpdated": "2026-08-20"
+    },
+    {
         "title": "BLUAIUSDT.P Binance Perpetual Futures Live Tracking & Chart",
         "slug": "bluaiusdt-p.html",
         "description": "Short idea on BLUAI / USDT Binance Perpetual Futures. RSI bearish divergence happening in lower timeframe.",
